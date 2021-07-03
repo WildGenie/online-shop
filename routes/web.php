@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\ProductController;
+use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,7 +16,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('index', ['products' => Product::all()]);
 })->name('home');
 
 Route::get('/home', function () {
@@ -25,6 +27,10 @@ Route::get('/about', function () {
     return view('about');
 })->name('about');
 
-Route::get('/shop', function () {
-    return view('shop');
+Route::get('/contact', function () {
+    return view('contact');
 });
+
+Route::get('/products', [ProductController::class, 'showProducts']);
+
+Route::get('/products/{product:slug}', [ProductController::class, 'showSingle']);

@@ -19,7 +19,7 @@
                                 <li><a href="{{ route('home2') }}">Home - 2</a></li>
                             </ul>
                         </li>
-                        <li class="has-submenu full-width"><a href="#/"><span>Shop</span></a>
+                        <li class="has-submenu full-width"><a href="/products"><span>Shop</span></a>
                             <ul class="submenu-nav submenu-nav-mega">
                                 <li class="mega-menu-item"><a href="#/" class="mega-title">Collection 01</a>
                                     <ul>
@@ -58,7 +58,7 @@
                                 </li>
                             </ul>
                         </li>
-                        <li class="has-submenu"><a href="#/"><span>Products</span></a>
+                        <li class="has-submenu"><a href="/products"><span>Products</span></a>
                             <ul class="submenu-nav">
                                 <li><a href="/shop">New and sale badge product</a></li>
                                 <li><a href="../shop-single-badge.blade.php">New badge product</a></li>
@@ -99,7 +99,7 @@
                                 <li><a href="../single-blog-right-sidebar.blade.php">Single Blog Right Sidebar</a></li>
                             </ul>
                         </li>
-                        <li><a href="../contact.blade.php"><span>Contact</span></a></li>
+                        <li><a href="/contact"><span>Contact</span></a></li>
                     </ul>
                 </div>
             </div>

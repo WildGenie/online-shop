@@ -1,5 +1,5 @@
 (function($) {
-  
+
   "use strict";
 
   // Preloader
@@ -197,7 +197,7 @@
       (this).swiper.autoplay.start();
     });
 
-  // Post Slider Js
+  // Product Slider Js
     var swiper = new Swiper('.post-slider-container', {
       slidesPerGroup: 1,
       spaceBetween: 30,
@@ -319,7 +319,7 @@
     $button.parent().find('input').val(newVal);
   });
 
-  // Countdown Js 
+  // Countdown Js
   $(".ht-countdown").each(function(index, element) {
     var $element = $(element),
     $date = $element.data('date');
@@ -393,7 +393,7 @@
     });
   }
   scrollToTop();
-  
+
 /* ==========================================================================
    When document is loading, do
    ========================================================================== */
