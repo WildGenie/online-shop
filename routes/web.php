@@ -26,5 +26,5 @@ Route::get('/about', function () {
 })->name('about');
 
 Route::get('/shop', function () {
-    return view('shop-single-new');
+    return view('shop');
 });

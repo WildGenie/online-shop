@@ -32,7 +32,7 @@
           <div class="col-lg-8">
             <div class="blog-details-content-wrap">
               <div class="thumb">
-                <img src=" asset('img/blog/single-01.jpg') }} " alt="Image-HasTech">
+                <img src=" asset('img/blog/single-01.jpg')}}" alt="Image-HasTech">
               </div>
               <div class="content">
                 <h3 class="title">Make a type specimen book</h3>
@@ -73,7 +73,7 @@
                   <div class="sidebar-post-item">
                     <div class="post-item">
                       <div class="thumb">
-                        <a href="blog.blade.php"><img src="asset('img/blog/sb1.jpg') }} " alt="Image-HasTech"></a>
+                        <a href="blog.blade.php"><img src="asset('img/blog/sb1.jpg')}}" alt="Image-HasTech"></a>
                       </div>
                       <div class="content">
                         <h4 class="title"><a href="blog.blade.php">Standard dummy text ever since</a></h4>
@@ -82,7 +82,7 @@
                     </div>
                     <div class="post-item">
                       <div class="thumb">
-                        <a href="blog.blade.php"><img src="asset('img/blog/sb2.jpg') }} " alt="Image-HasTech"></a>
+                        <a href="blog.blade.php"><img src="asset('img/blog/sb2.jpg')}}" alt="Image-HasTech"></a>
                       </div>
                       <div class="content">
                         <h4 class="title"><a href="blog.blade.php">Make a type specimen book</a></h4>
@@ -91,7 +91,7 @@
                     </div>
                     <div class="post-item">
                       <div class="thumb">
-                        <a href="blog.blade.php"><img src="asset('img/blog/sb3.jpg') }} " alt="Image-HasTech"></a>
+                        <a href="blog.blade.php"><img src="asset('img/blog/sb3.jpg')}}" alt="Image-HasTech"></a>
                       </div>
                       <div class="content">
                         <h4 class="title"><a href="blog.blade.php">Lorem Ipsum is simply dummy</a></h4>
@@ -151,58 +151,5 @@
       </div>
     </section>
     <!--== End Blog Details Area Wrapper ==-->
-
-    <!--== Start Feature Area Wrapper ==-->
-    <section class="feature-area">
-      <div class="feature-container">
-        <div class="row no-gutter">
-          <div class="feature-col col-xl-3 col-md-6 col-12">
-            <div class="feature-icon-box">
-              <div class="inner-content">
-                <div class="icon-box" data-bg-img="{{asset('img/icons/1.jpg') }} "></div>
-                <div class="content">
-                  <h3 class="title">Free home delivery</h3>
-                  <p>Provide free home delivery for all product over $100</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="feature-col col-xl-3 col-md-6 col-12">
-            <div class="feature-icon-box">
-              <div class="inner-content">
-                <div class="icon-box" data-bg-img="{{asset('img/icons/1.jpg') }} "></div>
-                <div class="content">
-                  <h3 class="title">Quality Products</h3>
-                  <p>We ensure the product quality that is our main goal</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="feature-col col-xl-3 col-md-6 col-12">
-            <div class="feature-icon-box">
-              <div class="inner-content">
-                <div class="icon-box" data-bg-img="{{asset('img/icons/1.jpg') }} "></div>
-                <div class="content">
-                  <h3 class="title">3 Days Return</h3>
-                  <p>Return product within 3 days for any product you buy</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="feature-col col-xl-3 col-md-6 col-12">
-            <div class="feature-icon-box">
-              <div class="inner-content">
-                <div class="icon-box" data-bg-img="{{asset('img/icons/1.jpg') }} "></div>
-                <div class="content">
-                  <h3 class="title">Online Support</h3>
-                  <p>We ensure the product quality that you can trust easily</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <!--== End Feature Area Wrapper ==-->
 
 </x-layout>
