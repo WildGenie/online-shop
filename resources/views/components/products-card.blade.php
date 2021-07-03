@@ -1,7 +1,7 @@
 @props(['product'])
 
 <!--== Start Shop Item ==-->
-<div class="product-item">
+<div {{ $attributes->merge(['class' => 'product-item']) }}>
     <div class="inner-content">
         <div class="product-thumb">
             <a href="/products/{{ $product->slug }}">
