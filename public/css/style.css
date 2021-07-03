@@ -5899,6 +5899,11 @@ section .container-fluid {
     Contact CSS
 -----------------------------------------------------------------------
 */
+#map {
+    height: 400px;
+    width: 100%;
+}
+
 .contact-area .container {
   padding-top: 90px;
   padding-bottom: 72px;

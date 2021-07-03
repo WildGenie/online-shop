@@ -1,6 +1,7 @@
 <head>
     <title>Contact – Diana – Furniture Store eCommerce Bootstrap5 Template</title>
 
+    <script src="{{ asset('js/map.js') }}"></script>
 </head>
 
 <x-layout>
@@ -155,5 +156,12 @@
       </div>
     </section>
     <!--== End Brand Logo Area Wrapper ==-->
+
+    <div id="map"></div>
+
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBZUjubmY-8Y7V174Pq0hld7SZYxoqZhI8&callback=initMap&libraries=&v=weekly"
+        async
+    ></script>
 
 </x-layout>
