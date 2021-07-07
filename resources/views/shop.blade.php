@@ -95,9 +95,9 @@
                 <h4 class="product-sidebar-title">Search</h4>
                 <div class="product-sidebar-body">
                   <div class="product-sidebar-search-form">
-                    <form action="#">
+                    <form action="#" method="GET">
                       <div class="form-group">
-                        <input class="form-control" type="search" placeholder="Enter key words">
+                        <input class="form-control" type="search" name="search" placeholder="Enter key words">
                         <button type="submit" class="btn-src">Search</button>
                       </div>
                     </form>
@@ -111,10 +111,9 @@
                 <h4 class="product-sidebar-title">Categories</h4>
                 <div class="product-sidebar-body">
                   <div class="product-sidebar-nav-menu">
-                    <a href="#/">Chair <span>(12)</span></a>
-                    <a href="#/">Featured <span>(12)</span></a>
-                    <a href="#/">Home page <span>(1)</span></a>
-                    <a href="#/">Sofa <span>(12)</span></a>
+                    @foreach($categories as $category)
+                          <a href="/products?category={{ $category->slug }}">{{ $category->name }}</a>
+                      @endforeach
                   </div>
                 </div>
               </div>

@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -26,6 +27,7 @@ class ProductFactory extends Factory
         $slug = str_replace(' ', '-', $title);
 
         return [
+            'category_id' => Category::factory(),
             'slug' => $slug,
             'title' => $title,
             'description' => $this->faker->paragraph,
