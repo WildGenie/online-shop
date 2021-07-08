@@ -25,9 +25,9 @@
                         </li>
                         <li class="has-submenu"><a href="#/"><span>Pages</span></a>
                             <ul class="submenu-nav">
-                                <li><a href="../shop-size-chart.blade.php">Size chart</a></li>
-                                <li><a href="../shop-shipping-policy.blade.php">Shipping policy</a></li>
-                                <li><a href="../about.blade.php">About</a></li>
+                                <li><a href="{{ route('size') }}">Size chart</a></li>
+                                <li><a href="{{ route('policy') }}">Shipping policy</a></li>
+                                <li><a href="{{ route('about') }}">About</a></li>
                             </ul>
                         </li>
                         <li class="has-submenu">

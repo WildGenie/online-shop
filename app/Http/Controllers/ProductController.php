@@ -19,6 +19,7 @@ class ProductController extends Controller
             ->get();
 
         return view('shop', [
+            'title' => 'Products',
             'products' => $products,
             'categories' => Category::all(),
         ]);

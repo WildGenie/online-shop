@@ -1,7 +1,9 @@
 <x-layout>
+
+    <x-page-header :title="$title"/>
+
     <!--== Start Contact Form ==-->
-    <div class="contact-form">
-        <h4 class="contact-form-title">Registration</h4>
+    <div class="contact-form m-lg-5">
         <form id="contact-form" action="{{ route('register') }}" method="post">
             @csrf
                 <div class="form-group col-md-6">

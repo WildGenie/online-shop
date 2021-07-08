@@ -9,7 +9,7 @@ class RegisterController extends Controller
 {
     public function show()
     {
-        return view('register.register');
+        return view('register.register', ['title' => 'Register']);
     }
 
     public function create()

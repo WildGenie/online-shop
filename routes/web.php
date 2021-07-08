@@ -22,12 +22,20 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/about', function () {
-    return view('about');
+    return view('about', ['title' => 'About']);
 })->name('about');
 
 Route::get('/contact', function () {
-    return view('contact');
+    return view('contact', ['title' => 'Contact']);
 })->name('contact');
+
+Route::get('/policy', function () {
+    return view('shop-shipping-policy', ['title' => 'Shipping policy']);
+})->name('policy');
+
+Route::get('/sizes', function () {
+    return view('shop-size-chart', ['title' => 'Size chart']);
+})->name('size');
 
 Route::get('/products', [ProductController::class, 'showProducts'])->name('products');
 Route::get('/products/{product:slug}', [ProductController::class, 'showSingle']);
