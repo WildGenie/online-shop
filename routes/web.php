@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\RegisterController;
 use App\Models\Category;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
@@ -35,3 +36,7 @@ Route::get('/contact', function () {
 Route::get('/products', [ProductController::class, 'showProducts']);
 
 Route::get('/products/{product:slug}', [ProductController::class, 'showSingle']);
+
+// registration / login routes
+Route::get('/register', [RegisterController::class, 'show'])->middleware('guest');
+Route::post('/register', [RegisterController::class, 'create'])->middleware('guest');

@@ -130,10 +130,10 @@
                             <ul class="user-dropdown">
                                 <li class="user">
                                     <ul>
-                                        <li><a href="#/">Login</a></li>
+                                        <li><a href="/login">Login</a></li>
                                     </ul>
                                     <ul>
-                                        <li><a href="#/">Register</a></li>
+                                        <li><a href="/register">Register</a></li>
                                     </ul>
                                 </li>
                             </ul>
