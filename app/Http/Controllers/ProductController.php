@@ -28,6 +28,7 @@ class ProductController extends Controller
     public function showSingle(Product $product)
     {
         return view('shop-single', [
+            'title' => 'Product',
             'product' => $product,
             'categories' => Category::all()
         ]);
