@@ -112,7 +112,9 @@
                 <div class="product-sidebar-body">
                   <div class="product-sidebar-nav-menu">
                     @foreach($categories as $category)
-                          <a href="/products?category={{ $category->slug }}">{{ $category->name }}</a>
+                          <a href="{{ route('products') }}?category={{ $category->slug }}">{{ $category->name }}
+                              <span>({{ $category->products->count() }})</span>
+                          </a>
                       @endforeach
                   </div>
                 </div>
@@ -209,23 +211,6 @@
                       <li><a href="#/">pink</a></li>
                     </ul>
                   </div>
-                </div>
-              </div>
-              <!--== End Sidebar Item ==-->
-
-              <!--== Start Sidebar Item ==-->
-              <div class="product-sidebar-item">
-                <h4 class="product-sidebar-title">Banner</h4>
-                <div class="product-sidebar-body">
-                  <!--== Start Product Item ==-->
-                  <div class="product-sidebar-item">
-                    <div class="thumb">
-                      <a href="single-product-simple.html">
-                        <img class="w-100" src="{{asset('img/slider/slider-05.jpg')}}" alt="Image-HasTech">
-                      </a>
-                    </div>
-                  </div>
-                  <!--== End Product Item ==-->
                 </div>
               </div>
               <!--== End Sidebar Item ==-->

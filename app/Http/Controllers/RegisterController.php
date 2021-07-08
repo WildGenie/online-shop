@@ -16,8 +16,8 @@ class RegisterController extends Controller
     {
         User::create(request()->validate([
             'name' => 'required|min:2|max:255',
-            'username' => 'required|min:3|max:255',
-            'email' => 'required|regex:/^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/|min:3|max:255',
+            'username' => 'required|min:3|max:255|unique:users,username',
+            'email' => 'required|email|min:3|max:255|unique:users,email',
             'password' => 'required|min:7|max:255'
         ]));
 

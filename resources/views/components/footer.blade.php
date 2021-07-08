@@ -7,14 +7,11 @@
                     <!--== Start widget Item ==-->
                     <div class="widget-item">
                         <div class="footer-logo-area">
-                            <a href="../index.blade.php">
-                                <img class="logo-main" src="{{ asset('img/logo-light.png') }}" alt="Logo" />
+                            <a href="{{ route('home') }}">
+                                <img class="logo-main" src="{{ asset('img/logo.svg') }}" alt="Logo" />
                             </a>
                         </div>
-                        <p>People have been using natural objects, such as tree stumps, rocks and moss, as furniture since the beginning of human civilisation.</p>
-                        <p>Your current address goes to here,120 example, country.</p>
-                        <p>+12546 687 987  / +15425 987 541</p>
-                        <p>demo@example.com www.example.com</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad doloribus facilis fuga itaque modi nesciunt, nihil possimus saepe similique. Asperiores enim fugiat laborum. A accusantium aliquam aliquid earum fuga iure molestias possimus provident quas voluptatem! Ad, dolore, expedita impedit libero magnam nihil omnis quas similique temporibus veritatis vero voluptatem.</p>
                     </div>
                     <!--== End widget Item ==-->
                 </div>
@@ -27,10 +24,10 @@
                             <ul class="nav-menu">
                                 <li><a href="../page-search.blade.php">Search</a></li>
                                 <li><a href="{{ route('about') }}">About</a></li>
-                                <li><a href="../contact.blade.php">Contact</a></li>
+                                <li><a href="{{ route('contact') }}">Contact</a></li>
                                 <li><a href="shipping-policy.html">Shipping policy</a></li>
                                 <li><a href="wishlist.html">Wishlist</a></li>
-                                <li><a href="../shop.blade.php">All Products</a></li>
+                                <li><a href="{{ route('products') }}">All Products</a></li>
                             </ul>
                         </div>
                     </div>
@@ -75,21 +72,5 @@
             </div>
         </div>
     </div>
-    <!--== Start Footer Bottom ==-->
-    <div class="footer-bottom">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6">
-                    <p class="copyright">Copyright © <a target="_blank" href="https://hasthemes.com/">Diana</a> All Right Reserved.</p>
-                </div>
-                <div class="col-lg-6">
-                    <div class="payment-method">
-                        <img src="{{ asset('img/icons/payment.webp') }}" alt="Image-HasTech">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--== End Footer Bottom ==-->
 </footer>
 <!--== End Footer Area Wrapper ==-->

@@ -36,12 +36,12 @@
                 <div class="content">
                   <h4 class="title">Search for products on our site</h4>
                 </div>
-                <form action="#">
+                <form action="/products?search{{ request('search') }}" method="GET">
                   <div class="row">
                     <div class="col-12">
                       <div class="form-group">
-                        <input class="form-control" type="search" placeholder="Search our store">
-                        <button class="btn-search">Search</button>
+                        <input class="form-control" type="search" name="search" placeholder="Search our store">
+                        <button class="btn-search" type="submit">Search</button>
                       </div>
                     </div>
                   </div>

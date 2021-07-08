@@ -2,7 +2,7 @@
     <!--== Start Contact Form ==-->
     <div class="contact-form">
         <h4 class="contact-form-title">Registration</h4>
-        <form id="contact-form" action="/register" method="post">
+        <form id="contact-form" action="{{ route('register') }}" method="post">
             @csrf
                 <div class="form-group col-md-6">
                     <input class="form-control" type="text" name="name" placeholder="Name" value="{{ old('name') }}" required>

@@ -4,7 +4,7 @@
 <div {{ $attributes->merge(['class' => 'product-item']) }}>
     <div class="inner-content">
         <div class="product-thumb">
-            <a href="/products/{{ $product->slug }}">
+            <a href="{{ route('products') }}/{{ $product->slug }}">
                 <img class="w-100" src="{{asset('img/shop/14.jpg')}}" alt="Image-HasTech">
             </a>
             <div class="product-action">
@@ -33,7 +33,7 @@
         <div class="product-desc">
             <div class="product-info">
                 <h4 class="title">
-                    <a href="/products/{{ $product->slug }}">{{ $product->title }}</a>
+                    <a href="{{ route('products') }}/{{ $product->slug }}">{{ $product->title }}</a>
                 </h4>
                 <div class="star-content">
 
@@ -41,8 +41,7 @@
 
                 </div>
                 <div class="prices">
-                    <span class="price">Tk {{ $product->price }} </span>
-{{--                        <span class="price-old">Tk 21.00</span>--}}
+                    <span class="price">USD {{ $product->price }} </span>
                 </div>
             </div>
         </div>

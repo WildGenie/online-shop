@@ -1284,6 +1284,10 @@ section .container-fluid {
   margin: 3px;
 }
 
+.logo-main {
+    width: 80px;
+}
+
 .header-action-area {
   align-items: center;
   display: flex;
@@ -4175,6 +4179,7 @@ section .container-fluid {
 .product-information .edit-checkout-head .header-logo-area img {
   margin-bottom: 24px;
 }
+
 .product-information .edit-checkout-head .breadcrumb-area ul {
   margin-bottom: 30px;
 }

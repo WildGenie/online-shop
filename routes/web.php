@@ -21,22 +21,17 @@ Route::get('/', function () {
     return view('index', ['products' => Product::all(), 'categories' => Category::all()]);
 })->name('home');
 
-Route::get('/home', function () {
-    return view('index-two');
-})->name('home2');
-
 Route::get('/about', function () {
     return view('about');
 })->name('about');
 
 Route::get('/contact', function () {
     return view('contact');
-});
+})->name('contact');
 
-Route::get('/products', [ProductController::class, 'showProducts']);
-
+Route::get('/products', [ProductController::class, 'showProducts'])->name('products');
 Route::get('/products/{product:slug}', [ProductController::class, 'showSingle']);
 
 // registration / login routes
-Route::get('/register', [RegisterController::class, 'show'])->middleware('guest');
+Route::get('/register', [RegisterController::class, 'show'])->middleware('guest')->name('register');
 Route::post('/register', [RegisterController::class, 'create'])->middleware('guest');
