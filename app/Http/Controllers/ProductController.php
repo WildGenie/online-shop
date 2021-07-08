@@ -16,7 +16,7 @@ class ProductController extends Controller
         $products = Product::latest()
             ->filter($request->all('category', 'search'))
             ->with('category')
-            ->get();
+            ->paginate(25);
 
         return view('shop', [
             'title' => 'Products',

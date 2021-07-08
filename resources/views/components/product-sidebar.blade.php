@@ -51,7 +51,7 @@
         <div class="product-sidebar-body">
             <div class="product-sidebar-nav-menu">
                 @foreach($categories as $category)
-                    <a href="{{ route('products') }}?category={{ $category->slug }}&{{ http_build_query(request()->except('category')) }}">{{ $category->name }}
+                    <a href="{{ route('products') }}?category={{ $category->slug }}&{{ http_build_query(request()->except('category', 'page')) }}">{{ $category->name }}
                         <span>({{ $category->products->count() }})</span>
                     </a>
                 @endforeach

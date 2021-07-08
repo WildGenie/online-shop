@@ -21,8 +21,8 @@ class DatabaseSeeder extends Seeder
         $category3 = Category::factory()->create();
 
 
-         Product::factory(5)->create(['category_id' => $category->id]);
-         Product::factory(5)->create(['category_id' => $category2->id]);
+         Product::factory(10)->create(['category_id' => $category->id]);
+         Product::factory(24)->create(['category_id' => $category2->id]);
          Product::factory(5)->create(['category_id' => $category3->id]);
     }
 }

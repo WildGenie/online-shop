@@ -20,9 +20,6 @@
                   </div>
                 </nav>
               </div>
-              <div class="show-product-area">
-                <p class="show-product">Showing 1 - 15 of 33 result</p>
-              </div>
               <div class="nav-short-area">
                 <div class="toolbar-shorter">
                   <label for="SortBy">Sort by</label>
@@ -50,19 +47,8 @@
                     @endforeach
                   </div>
 
-                  <x-pagination />
-
-                </div>
-                <div class="tab-pane fade" id="nav-list" role="tabpanel" aria-labelledby="nav-list-tab">
-                  <div class="row">
-                    @foreach($products as $product)
-                        <div class="col-12">
-                            <x-products-card :product="$product" class="product-item-list" />
-                        </div>
-                    @endforeach
-                  </div>
-
-                  <x-pagination />
+                    <!--== Pagination Links ==-->
+                    {{ $products->links() }}
 
                 </div>
               </div>
@@ -75,5 +61,7 @@
       </div>
     </section>
     <!--== End Product Area Wrapper ==-->
+
+
 
 </x-layout>
