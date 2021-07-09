@@ -1,4 +1,4 @@
-@props(['categories', 'title'])
+@props(['categories', 'title', 'color'])
 
 @if($title == 'Product')
     <!--== Start Product Sidebar Wrapper ==-->
@@ -37,6 +37,9 @@
                             <input type="hidden" name="category" value="{{ request('category') }}">
                         @endif
                         @if (request('sort'))
+                            <input type="hidden" name="sort" value="{{ request('sort') }}">
+                        @endif
+                        @if (request('color'))
                             <input type="hidden" name="sort" value="{{ request('sort') }}">
                         @endif
                         <input class="form-control" type="search" name="search" placeholder="Enter key words">
@@ -98,16 +101,11 @@
         <h4 class="product-sidebar-title">Color</h4>
         <div class="product-sidebar-body">
             <div class="product-sidebar-color-menu">
-                <div class="red"></div>
-                <div class="green"></div>
-                <div class="blue"></div>
-                <div class="yellow"></div>
-                <div class="white"></div>
-                <div class="gold"></div>
-                <div class="gray"></div>
-                <div class="magenta"></div>
-                <div class="maroon"></div>
-                <div class="navy"></div>
+                @foreach($color as $value)
+                    <a href="{{ route('products') }}?color={{ $value }}&{{ http_build_query(request()->except('color', 'page')) }}">
+                        <div class="{{ $value }}"></div>
+                    </a>
+                @endforeach
             </div>
         </div>
     </div>

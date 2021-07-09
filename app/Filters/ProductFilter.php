@@ -34,4 +34,12 @@ class ProductFilter extends QueryFilter
             });
     }
 
+    public function color($color = '')
+    {
+        return
+            $this->builder->when($color, function ($query, $color) {
+                $query->where('color', $color);
+            });
+    }
+
 }

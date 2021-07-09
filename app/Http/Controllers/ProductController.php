@@ -24,6 +24,7 @@ class ProductController extends Controller
             'products' => $products,
             'categories' => Category::all(),
             'sort' => Product::sort(),
+            'color' => Product::color(),
         ]);
     }
 

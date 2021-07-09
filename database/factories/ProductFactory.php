@@ -26,11 +26,14 @@ class ProductFactory extends Factory
         $title = $this->faker->sentence;
         $slug = str_replace(' ', '-', $title);
 
+        $colorArray = Product::color();
+
         return [
             'category_id' => Category::factory(),
             'slug' => $slug,
             'title' => $title,
             'image' => $this->faker->image(public_path('storage'), 480, 480, null, false),
+            'color' => $this->faker->randomElement($colorArray),
             'description' => $this->faker->paragraph,
             'price' => $this->faker->numberBetween(30, 300),
             'stars' => $this->faker->numberBetween(1, 5),

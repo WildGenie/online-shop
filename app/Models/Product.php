@@ -32,4 +32,8 @@ class Product extends Model
         ];
     }
 
+    public function scopeColor() {
+        return ['red', 'green', 'blue', 'yellow', 'white', 'gold', 'gray', 'magenta', 'maroon', 'navy'];
+    }
+
 }
