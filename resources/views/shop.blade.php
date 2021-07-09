@@ -44,7 +44,7 @@
             </div>
           </div>
           <div class="col-lg-3">
-            <x-product-sidebar :categories="$categories" :title="$title" :color="$color"/>
+            <x-product-sidebar :categories="$categories" :title="$title" :colors="$colors"/>
           </div>
         </div>
       </div>

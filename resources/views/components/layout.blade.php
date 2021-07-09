@@ -73,10 +73,6 @@
     <x-footer />
 
     <x-scroll-top-button />
-    <x-quick-view-menu />
-    <x-side-menu />
-
-
 </div>
     <!--=======================Javascript============================-->
 
