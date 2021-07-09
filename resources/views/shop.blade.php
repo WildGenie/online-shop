@@ -22,7 +22,7 @@
               </div>
 
               <!--== Products sorting filters ==-->
-              <x-sort-filter />
+              <x-sort-filter :sort="$sort"/>
 
             </div>
             <div class="product-body-wrap">

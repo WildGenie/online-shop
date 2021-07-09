@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Filters\ProductFilter;
 use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Models\Product;
@@ -11,10 +12,10 @@ class ProductController extends Controller
 {
 
 
-    public function showProducts(Request $request)
+    public function showProducts(ProductFilter $request)
     {
 
-        $products = Product::filter($request->all('category', 'search', 'sort'))
+        $products = Product::filter($request)
             ->with('category')
             ->paginate(25);
 
@@ -22,6 +23,7 @@ class ProductController extends Controller
             'title' => 'Products',
             'products' => $products,
             'categories' => Category::all(),
+            'sort' => Product::sort(),
         ]);
     }
 

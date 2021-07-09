@@ -2,6 +2,8 @@
 
 namespace App\Models;
 
+use App\Filters\QueryFilter;
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -9,31 +11,25 @@ class Product extends Model
 {
     use HasFactory;
 
-    public function scopeFilter($query, array $requests)
-    {
-
-        $query->when($requests['search'] ?? false, function ($query, $search) {
-            $query->where(function ($query) use ($search) {
-                $query->where('title', 'like', '%' . $search . '%')
-                    ->orWhere('description', 'like', '%' . $search . '%');
-            });
-        });
-
-        $query->when($requests['category'] ?? false, function ($query, $category) {
-            $query->join('categories', 'products.category_id', 'categories.id')
-                ->where('categories.slug', $category)
-                ->select('products.*', 'categories.slug', 'products.slug');
-        });
-
-        $query->when($requests['sort'] ?? false, function ($query, $sort) {
-            $query->orderBy(stristr($sort, '-', true), explode('-', $sort)[1]);
-        });
-
+    public function scopeFilter(Builder $builder, QueryFilter $filter){
+        return $filter->apply($builder);
     }
 
     public function category()
     {
         return $this->belongsTo(Category::class);
+    }
+
+    public function scopeSort() {
+        return [
+            ['url' => 'stars-desc', 'name' => 'Best Selling'],
+            ['url' => 'title-asc', 'name' => 'Alphabetically, A-Z'],
+            ['url' => 'title-desc', 'name' => 'Alphabetically, Z-A'],
+            ['url' => 'price-asc', 'name' => 'Price, low to high'],
+            ['url' => 'price-desc', 'name' => 'Price, high to low'],
+            ['url' => 'created_at-desc', 'name' => 'Date, new to old'],
+            ['url' => 'created_at-asc', 'name' => 'Date, old to new']
+        ];
     }
 
 }
