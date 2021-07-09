@@ -63,6 +63,8 @@
 
     <x-header />
 
+    <x-message-success />
+
     <main class="main-content">
         {{ $slot }}
 

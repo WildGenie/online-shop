@@ -17,9 +17,6 @@
                         <li class="has-submenu">
                             <a href="{{ route('home') }}"><span>Home</span></a>
                         </li>
-                        <li class="has-submenu full-width">
-                            <a href="{{ route('products') }}"><span>Shop</span></a>
-                        </li>
                         <li class="has-submenu">
                             <a href="{{ route('products') }}"><span>Products</span></a>
                         </li>
@@ -61,14 +58,30 @@
                     <ul class="header-action">
                         <li class="user-menu">
                             <a class="title" href="javascript:;"><i class="fa fa-user-o"></i></a>
-                            <ul class="user-dropdown">
+                            <ul class="user-dropdown" @if(auth()->check()) style="height: 130px" @endif>
                                 <li class="user">
-                                    <ul>
-                                        <li><a href="/login">Login</a></li>
-                                    </ul>
-                                    <ul>
-                                        <li><a href="{{ route('register') }}">Register</a></li>
-                                    </ul>
+                                    @auth
+                                        <ul>
+                                            <li>Hello,
+                                                <span class="text-primary">{{ auth()->user()->name }}</span>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <form method="POST" action="/logout">
+                                                @csrf
+
+                                                <button class="btn btn-danger" type="submit">Log Out</button>
+                                            </form>
+                                        </ul>
+                                    @else
+                                        <ul>
+                                            <li><a href="{{ route('login') }}">Login</a></li>
+                                        </ul>
+                                        <ul>
+                                            <li><a href="{{ route('register') }}">Register</a></li>
+                                        </ul>
+                                    @endauth
                                 </li>
                             </ul>
                         </li>

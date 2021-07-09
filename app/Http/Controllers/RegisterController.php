@@ -3,13 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
     public function show()
     {
-        return view('register.register', ['title' => 'Register']);
+        return view('auth.register', ['title' => 'Register']);
     }
 
     public function create()
@@ -21,6 +20,6 @@ class RegisterController extends Controller
             'password' => 'required|min:7|max:255'
         ]));
 
-        return redirect()->route('home');
+        return redirect()->route('home')->with('success', 'Your account has been created.');
     }
 }
