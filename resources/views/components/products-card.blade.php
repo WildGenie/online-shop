@@ -5,7 +5,7 @@
     <div class="inner-content">
         <div class="product-thumb">
             <a href="{{ route('products') }}/{{ $product->slug }}">
-                <img class="w-100" src="{{asset('img/shop/14.jpg')}}" alt="Image-HasTech">
+                <img class="w-100" src="/storage/{{ $product->image }}" alt="Image-HasTech">
             </a>
             <div class="product-action">
                 <div class="addto-wrap">

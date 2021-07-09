@@ -19,6 +19,7 @@ class CreateProductsTable extends Migration
             $table->string('slug')->unique();
             $table->string('title');
             $table->mediumText('description');
+            $table->string('image');
             $table->bigInteger('price');
             $table->integer('stars');
             $table->timestamps();

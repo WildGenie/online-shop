@@ -6,7 +6,6 @@
         <h4 class="title">{{ $product->title }}</h4>
         <div class="prices">
             <span class="price">Tk {{ $product->price }}</span>
-{{--            <span class="price-old">Tk 85.00</span>--}}
         </div>
         <div class="star-content">
             <x-product-stars :product="$product"/>

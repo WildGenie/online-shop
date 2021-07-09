@@ -21,9 +21,7 @@
                         <div class="swiper-wrapper">
                           <div class="swiper-slide">
                             <div class="zoom zoom-hover">
-                              <a class="lightbox-image" data-fancybox="gallery" href="{{asset('img/shop/product-single/1.jpg')}}">
-                                <img src="{{asset('img/shop/product-single/1.jpg')}}" alt="Image-HasTech">
-                              </a>
+                                <img src="/storage/{{ $product->image }}" alt="Image-HasTech">
                             </div>
                           </div>
                           <div class="swiper-slide">

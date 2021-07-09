@@ -30,6 +30,7 @@ class ProductFactory extends Factory
             'category_id' => Category::factory(),
             'slug' => $slug,
             'title' => $title,
+            'image' => $this->faker->image(public_path('storage'), 480, 480, null, false),
             'description' => $this->faker->paragraph,
             'price' => $this->faker->numberBetween(30, 300),
             'stars' => $this->faker->numberBetween(1, 5),
