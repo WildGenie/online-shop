@@ -25,6 +25,10 @@ class Product extends Model
                 ->select('products.*', 'categories.slug', 'products.slug');
         });
 
+        $query->when($requests['sort'] ?? false, function ($query, $sort) {
+            $query->orderBy(stristr($sort, '-', true), explode('-', $sort)[1]);
+        });
+
     }
 
     public function category()

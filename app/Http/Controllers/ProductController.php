@@ -13,8 +13,8 @@ class ProductController extends Controller
 
     public function showProducts(Request $request)
     {
-        $products = Product::latest()
-            ->filter($request->all('category', 'search'))
+
+        $products = Product::filter($request->all('category', 'search', 'sort'))
             ->with('category')
             ->paginate(25);
 
