@@ -69,7 +69,6 @@
             <a href="{{ route('products') }}?color={{ $color }}&{{ http_build_query(request()->except('color', 'page')) }}">
                 <div class="{{ $color }}"></div>
             </a>
-            <div class="red"></div>
         @endforeach
     </x-filters>
     <!--== End Sidebar Item ==-->
