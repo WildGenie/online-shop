@@ -30,6 +30,10 @@ Route::get('/contact', function () {
     return view('contact', ['title' => 'Contact']);
 })->name('contact');
 
+Route::get('/blog', function () {
+    return view('blog', ['title' => 'News']);
+})->name('blog');
+
 Route::get('/policy', function () {
     return view('shop-shipping-policy', ['title' => 'Shipping policy']);
 })->name('policy');
@@ -40,6 +44,14 @@ Route::get('/sizes', function () {
 
 Route::get('/products', [ProductController::class, 'showProducts'])->name('products');
 Route::get('/products/{product:slug}', [ProductController::class, 'showSingle']);
+
+Route::get('/shopping-cart', [ProductController::class, 'showCart'])->name('cart');
+Route::get('/shopping-cart/{product:id}', [ProductController::class, 'addToCart'])->name('cart-add');
+
+
+Route::get('/cart', function () {
+    return view('shop-cart');
+});
 
 // registration / login routes
 Route::get('/register', [RegisterController::class, 'show'])->middleware('guest')->name('register');

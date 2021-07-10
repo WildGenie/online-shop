@@ -6,7 +6,6 @@
             </button>
             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                 @foreach($sort as $sortValue)
-{{--                    {{ ddd($sortValue['url']) }}--}}
                     <a class="dropdown-item"
                        href="{{ route('products') }}?sort={{ $sortValue['url'] }}&{{ http_build_query(request()->except('sort', 'page')) }}">
                         {{ $sortValue['name'] }}

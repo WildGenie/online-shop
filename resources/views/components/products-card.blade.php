@@ -9,7 +9,11 @@
             </a>
             <div class="product-action">
                 <div class="addto-wrap">
-                    <a class="add-cart" href="shop-cart.blade.php">
+                    @if(auth()->check())
+                        <a class="add-cart" href="{{ route('cart') }}/{{ $product->id }}">
+                    @else
+                        <a class="add-cart" href="{{ route('register') }}">
+                    @endif
                         <span class="icon">
                             <i class="bardy bardy-shopping-cart"></i>
                             <i class="hover-icon bardy bardy-shopping-cart"></i>

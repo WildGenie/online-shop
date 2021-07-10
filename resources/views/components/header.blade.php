@@ -1,5 +1,3 @@
-@props(['categories'])
-
 <!--== Start Header Wrapper ==-->
 <header class="header-area header-default sticky-header">
     <div class="container">
@@ -11,6 +9,7 @@
                     </a>
                 </div>
             </div>
+            {{--==          PAGES MENU          ==--}}
             <div class="col">
                 <div class="header-navigation-area">
                     <ul class="main-menu nav">
@@ -34,8 +33,10 @@
                     </ul>
                 </div>
             </div>
+            {{--==         END PAGES MENU          ==--}}
             <div class="col">
                 <div class="header-action-area">
+                    {{--==          CURRENCY MENU          ==--}}
                     <ul class="header-action">
                         <li class="currency-menu">
                             <a class="title" href="javascript:;">USD</a>
@@ -55,6 +56,9 @@
                             </ul>
                         </li>
                     </ul>
+                    {{--==         END CURRENCY MENU         ==--}}
+
+                    {{--==          USER MENU          ==--}}
                     <ul class="header-action">
                         <li class="user-menu">
                             <a class="title" href="javascript:;"><i class="fa fa-user-o"></i></a>
@@ -86,6 +90,9 @@
                             </ul>
                         </li>
                     </ul>
+                    {{--==         END USER MENU          ==--}}
+
+                    {{--==          SEARCH          ==--}}
                     <div class="header-action">
                         <div class="header-search">
                             <button class="search-toggle">
@@ -100,6 +107,9 @@
                             </div>
                         </div>
                     </div>
+                    {{--==         END SEARCH          ==--}}
+
+                    {{--==          SHOPPING CART          ==--}}
                     <div class="header-action">
                         <div class="header-mini-cart">
                             <button class="mini-cart-toggle">
@@ -108,38 +118,47 @@
                             </button>
                             <div class="mini-cart-dropdown">
                                 <h4 class="cart-title">Your cart</h4>
-                                <div class="cart-item-wrap">
-                                    <div class="cart-item">
-                                        <div class="thumb">
-                                            <a href="#/"><img class="w-100" src="{{ asset('img/shop/cart/mini1.jpg') }}" alt="Image-HasTech"></a>
-                                            <a class="remove" href="javascript:void(0);"><i class="fa fa-trash-o"></i></a>
+{{--                                @foreach($items as $item)--}}
+{{--                                    <div class="cart-item-wrap">--}}
+{{--                                        <div class="cart-item">--}}
+{{--                                            <div class="thumb">--}}
+{{--                                                <a href="#/"><img class="w-100" src="{{ $item->image }}" alt="Image-HasTech"></a>--}}
+{{--                                                <a class="remove" href="javascript:void(0);"><i class="fa fa-trash-o"></i></a>--}}
+{{--                                            </div>--}}
+{{--                                            <div class="content">--}}
+{{--                                                <h5 class="title"><a href="#/">{{ $item->name }}</a></h5>--}}
+{{--                                                <span>USD {{ $item->price }}</span>--}}
+{{--                                            </div>--}}
+{{--                                        </div>--}}
+{{--                                    </div>--}}
+{{--                                @endforeach--}}
+                                @if(session('cart'))
+                                    @foreach(session('cart') as $details)
+                                        <div class="cart-item-wrap">
+                                            <div class="cart-item">
+                                                <div class="thumb">
+                                                    <a href="#/"><img class="w-100" src="3" alt="Image-HasTech"></a>
+                                                    <a class="remove" href="javascript:void(0);"><i class="fa fa-trash-o"></i></a>
+                                                </div>
+                                                <div class="content">
+{{--                                                    <h5 class="title"><a href="#/">{{ $details['title'] }}</a></h5>--}}
+                                                    <span>USD {{ $details['price'] }}</span>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="content">
-                                            <h5 class="title"><a href="#/">5. Simple product</a></h5>
-                                            <span>1 x Tk 50.00</span>
-                                        </div>
-                                    </div>
-                                    <div class="cart-item">
-                                        <div class="thumb">
-                                            <a href="#/"><img class="w-100" src="{{ asset('img/shop/cart/mini2.jpg') }}" alt="Image-HasTech"></a>
-                                            <a class="remove" href="javascript:void(0);"><i class="fa fa-trash-o"></i></a>
-                                        </div>
-                                        <div class="content">
-                                            <h5 class="title"><a href="#/">2. New badge product - m / gold</a></h5>
-                                            <span>1 x Tk 80.00</span>
-                                        </div>
-                                    </div>
-                                </div>
+                                    @endforeach
+                                @endif
                                 <div class="mini-cart-footer">
                                     <h4>Subtotal: <span class="total">Tk 130.00</span></h4>
                                     <div class="cart-btn">
-                                        <a href="../shop-cart.blade.php">View Cart</a>
+                                        <a href="{{ route('cart') }}">View Cart</a>
                                         <a href="../shop-checkout.blade.php">Checkout</a>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    {{--==         END SHOPPING CART          ==--}}
                     <div class="header-action d-block d-lg-none text-end">
                         <button class="btn-menu" type="button"><i class="zmdi zmdi-menu"></i></button>
                     </div>

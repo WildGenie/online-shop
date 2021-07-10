@@ -3,19 +3,8 @@
 </head>
 
 <x-layout>
-    <!--== Start Page Header Area Wrapper ==-->
-    <div class="page-header-area page-shopping-cart-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center">
-            <div class="page-header-content">
-              <h4 class="title" data-aos="fade-down" data-aos-duration="1200">Your Shopping Cart</h4>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--== End Page Header Area Wrapper ==-->
+
+    <x-page-header :title="$title"/>
 
     <!--== Start Product Area Wrapper ==-->
     <section class="product-area shopping-cart-area">
@@ -54,28 +43,6 @@
                       </td>
                       <td class="pro-subtotal">
                         <span class="subtotal-amount">Tk 80.00</span>
-                      </td>
-                      <td class="pro-remove">
-                        <a class="remove" href="#/"><i class="fa fa-trash-o"></i></a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="pro-thumbnail">
-                        <a href="shop.blade.php"><img src="{{asset('img/shop/cart/table2.jpg')}}" alt="Image-HasTech"></a>
-                      </td>
-                      <td class="pro-title">
-                        <h4 class="title"><a href="shop.blade.php">5. Simple product</a></h4>
-                      </td>
-                      <td class="pro-price">
-                        <span class="amount">Tk 50.00</span>
-                      </td>
-                      <td class="pro-quantity">
-                        <div class="pro-qty">
-                          <input type="text" id="quantity" title="Quantity" value="1">
-                        </div>
-                      </td>
-                      <td class="pro-subtotal">
-                        <span class="subtotal-amount">Tk 50.00</span>
                       </td>
                       <td class="pro-remove">
                         <a class="remove" href="#/"><i class="fa fa-trash-o"></i></a>
