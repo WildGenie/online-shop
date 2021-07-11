@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
@@ -45,15 +46,17 @@ Route::get('/sizes', function () {
 Route::get('/products', [ProductController::class, 'showProducts'])->name('products');
 Route::get('/products/{product:slug}', [ProductController::class, 'showSingle']);
 
-Route::get('/shopping-cart', [ProductController::class, 'showCart'])->name('cart');
-Route::get('/shopping-cart/{product:id}', [ProductController::class, 'addToCart'])->name('cart-add');
+
+//=====================  shopping cart
+Route::get('/shopping-cart', [CartController::class, 'show'])->name('cart');
+Route::get('/add-product/{product:id}', [CartController::class, 'addToCart'])->name('cart-add');
+Route::get('/delete-product/{cart:id}', [CartController::class, 'removeCart'])->name('cart-remove');
+Route::get('/clear-cart', [CartController::class, 'clearCart'])->name('cart-clear');
+
+Route::get('/shopping-checkout', [CartController::class, 'showCheckout'])->name('checkout');
 
 
-Route::get('/cart', function () {
-    return view('shop-cart');
-});
-
-// registration / login routes
+//=====================  registration / login routes
 Route::get('/register', [RegisterController::class, 'show'])->middleware('guest')->name('register');
 Route::post('/register', [RegisterController::class, 'create'])->middleware('guest');
 

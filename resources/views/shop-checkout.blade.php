@@ -12,7 +12,7 @@
               <div class="edit-checkout-head">
                 <div class="header-logo-area">
                   <a href="index.blade.php">
-                    <img class="logo-main" src="{{asset('img/logo.png')}}" alt="Logo">
+                    <img class="logo-main" src="{{asset('img/logo.svg')}}" alt="Logo">
                   </a>
                 </div>
                 <div class="breadcrumb-area">
@@ -27,11 +27,10 @@
               <div class="edit-checkout-information">
                 <h4 class="title">Contact information</h4>
                 <div class="logged-in-information">
-                  <div class="thumb" data-bg-img="{{asset('img/photos/gravatar2.png')}}"></div>
+                    <div>You:</div>
                   <p>
-                    <span class="name">Diana</span>
-                    <span>(diana@example.com)</span>
-                    <a href="#">Log out</a>
+                    <div class="name">{{ auth()->user()->name }}</div>
+                    <div>{{ auth()->user()->email }}</div>
                   </p>
                 </div>
                 <div class="form-check form-check-inline">
@@ -43,7 +42,7 @@
                   <div class="row row-gutter-12">
                     <div class="col-lg-6">
                       <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInputGrid" placeholder="name" value="Diana">
+                        <input type="text" class="form-control" id="floatingInputGrid" placeholder="name" value="{{ auth()->user()->name }}">
                         <label for="floatingInputGrid">First name (optional)</label>
                       </div>
                     </div>
@@ -92,7 +91,7 @@
                     <div class="col-12">
                       <div class="btn-box">
                         <a class="btn-shipping" href="shop.blade.php">Continue to shipping</a>
-                        <a class="btn-return" href="cart.html">Return to cart</a>
+                        <a class="btn-return" href="{{ route('cart') }}">Return to cart</a>
                       </div>
                     </div>
                   </div>
@@ -102,35 +101,26 @@
             <div class="col-lg-5">
               <div class="shipping-cart-subtotal-wrapper">
                 <div class="shipping-cart-subtotal">
-                  <div class="shipping-cart-item">
-                    <div class="thumb">
-                      <img src="{{asset('img/shop/cart/mini2.jpg')}}" alt="">
-                      <span class="quantity">1</span>
-                    </div>
-                    <div class="content">
-                      <h4 class="title">2. New badge product</h4>
-                      <span class="info">m / gold</span>
-                      <span class="price">$80.00</span>
-                    </div>
-                  </div>
-                  <div class="shipping-cart-item">
-                    <div class="thumb">
-                      <img src="{{asset('img/shop/cart/mini1.jpg')}}" alt="">
-                      <span class="quantity">1</span>
-                    </div>
-                    <div class="content">
-                      <h4 class="title">5. Simple product</h4>
-                      <span class="info">s</span>
-                      <span class="price">$50.00</span>
-                    </div>
-                  </div>
+                    @foreach($items as $item)
+                        <div class="shipping-cart-item">
+                            <div class="thumb">
+                                <img src="storage/{{ $item->image }}" alt="">
+                                <span class="quantity">1</span>
+                            </div>
+                            <div class="content">
+                                <h4 class="title">{{ $item->title }}</h4>
+                                <span class="info">m / gold</span>
+                                <span class="price">{{ $item->price }}</span>
+                            </div>
+                        </div>
+                    @endforeach
                   <div class="shipping-subtotal">
-                    <p><span>Subtotal</span><span><strong>$130.00</strong></span></p>
+                    <p><span>Subtotal</span><span><strong>USD {{ $amount }}</strong></span></p>
                     <p><span>Shipping</span><span>Calculated at next step</span></p>
                   </div>
                   <div class="shipping-total">
                     <p class="total">Total</p>
-                    <p class="price"><span class="usd">USD</span>$149.50</p>
+                    <p class="price">USD {{ $amount }}</p>
                   </div>
                 </div>
               </div>
@@ -140,8 +130,5 @@
       </div>
     </section>
     <!--== End Product Area Wrapper ==-->
-    <div class="edit-checkout-footer">
-      <p>All rights reserved Demo diana</p>
-    </div>
 
 </x-layout>

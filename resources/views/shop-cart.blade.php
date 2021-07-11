@@ -25,29 +25,31 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td class="pro-thumbnail">
-                        <a href="shop.blade.php"><img src="{{asset('img/shop/cart/table1.jpg')}}" alt="Image-HasTech"></a>
-                      </td>
-                      <td class="pro-title">
-                        <h4 class="title"><a href="shop.blade.php">2. New badge product</a></h4>
-                        <span>m / gold</span>
-                      </td>
-                      <td class="pro-price">
-                        <span class="amount">Tk 80.00</span>
-                      </td>
-                      <td class="pro-quantity">
-                        <div class="pro-qty">
-                          <input type="text" id="quantity" title="Quantity" value="1">
-                        </div>
-                      </td>
-                      <td class="pro-subtotal">
-                        <span class="subtotal-amount">Tk 80.00</span>
-                      </td>
-                      <td class="pro-remove">
-                        <a class="remove" href="#/"><i class="fa fa-trash-o"></i></a>
-                      </td>
-                    </tr>
+                    @foreach($items as $item)
+                        <tr>
+                            <td class="pro-thumbnail">
+                                <a href="shop.blade.php"><img src="storage/{{ $item->image }}" alt="Image-HasTech"></a>
+                            </td>
+                            <td class="pro-title">
+                                <h4 class="title"><a href="shop.blade.php">{{ $item->title }}</a></h4>
+                                <span>m / gold</span>
+                            </td>
+                            <td class="pro-price">
+                                <span class="amount">USD {{ $item->price }}</span>
+                            </td>
+                            <td class="pro-quantity">
+                                <div class="pro-qty">
+                                    <input type="text" id="quantity" title="Quantity" value="1">
+                                </div>
+                            </td>
+                            <td class="pro-subtotal">
+                                <span class="subtotal-amount">USD {{ $item->price }}</span>
+                            </td>
+                            <td class="pro-remove">
+                                <a class="remove" href="{{ route('cart-remove', [$item->id]) }}"><i class="fa fa-trash-o"></i></a>
+                            </td>
+                        </tr>
+                    @endforeach
                   </tbody>
                 </table>
               </div>
@@ -55,8 +57,8 @@
                 <div class="col-12">
                   <div class="cart-buttons">
                     <a class="theme-default-button" href="#/">Update Cart</a>
-                    <a class="theme-default-button" href="shop.blade.php">Continue Shopping</a>
-                    <a class="theme-default-button" href="#/">Clear Cart</a>
+                    <a class="theme-default-button" href="{{ route('products') }}">Continue Shopping</a>
+                    <a class="theme-default-button" href="{{ route('cart-clear') }}">Clear Cart</a>
                   </div>
                 </div>
               </div>
@@ -119,20 +121,16 @@
                           <h4 class="title">Cart Summary</h4>
                           <table>
                             <tbody>
-                              <tr class="cart-subtotal">
-                                <th>Subtotal</th>
-                                <td><span class="amount"><span>Tk 130.00</span></span></td>
-                              </tr>
                               <tr class="order-total">
                                 <th>Grand Total</th>
                                 <td>
-                                  <span class="amount"><span>Tk 130.00</span></span>
+                                  <span class="amount"><span>USD {{ $amount }}</span></span>
                                 </td>
                               </tr>
                             </tbody>
                           </table>
                           <div class="proceed-to-checkout">
-                            <a class="shop-checkout-button" href="shop-checkout.blade.php">Proceed to Checkout</a>
+                            <a class="shop-checkout-button" href="{{ route('checkout') }}">Proceed to Checkout</a>
                           </div>
                         </div>
                       </div>

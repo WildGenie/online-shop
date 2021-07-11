@@ -132,27 +132,11 @@
 {{--                                        </div>--}}
 {{--                                    </div>--}}
 {{--                                @endforeach--}}
-                                @if(session('cart'))
-                                    @foreach(session('cart') as $details)
-                                        <div class="cart-item-wrap">
-                                            <div class="cart-item">
-                                                <div class="thumb">
-                                                    <a href="#/"><img class="w-100" src="3" alt="Image-HasTech"></a>
-                                                    <a class="remove" href="javascript:void(0);"><i class="fa fa-trash-o"></i></a>
-                                                </div>
-                                                <div class="content">
-{{--                                                    <h5 class="title"><a href="#/">{{ $details['title'] }}</a></h5>--}}
-                                                    <span>USD {{ $details['price'] }}</span>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    @endforeach
-                                @endif
                                 <div class="mini-cart-footer">
                                     <h4>Subtotal: <span class="total">Tk 130.00</span></h4>
                                     <div class="cart-btn">
                                         <a href="{{ route('cart') }}">View Cart</a>
-                                        <a href="../shop-checkout.blade.php">Checkout</a>
+                                        <a href="{{ route('checkout') }}">Checkout</a>
                                     </div>
                                 </div>
                             </div>

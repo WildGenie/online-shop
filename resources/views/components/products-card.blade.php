@@ -9,11 +9,11 @@
             </a>
             <div class="product-action">
                 <div class="addto-wrap">
-                    @if(auth()->check())
-                        <a class="add-cart" href="{{ route('cart') }}/{{ $product->id }}">
+                    @auth
+                        <a class="add-cart" href="{{ route('cart-add', [$product->id]) }}">
                     @else
                         <a class="add-cart" href="{{ route('register') }}">
-                    @endif
+                    @endauth
                         <span class="icon">
                             <i class="bardy bardy-shopping-cart"></i>
                             <i class="hover-icon bardy bardy-shopping-cart"></i>
