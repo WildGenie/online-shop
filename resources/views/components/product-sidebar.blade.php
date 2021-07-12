@@ -38,7 +38,7 @@
                     <input type="hidden" name="sort" value="{{ request('sort') }}">
                 @endif
                 @if (request('color'))
-                    <input type="hidden" name="sort" value="{{ request('sort') }}">
+                    <input type="hidden" name="color" value="{{ request('color') }}">
                 @endif
                 <input class="form-control" type="search" name="search" placeholder="Enter key words">
                 <button type="submit" class="btn-src">Search</button>

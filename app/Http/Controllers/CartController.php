@@ -77,4 +77,9 @@ class CartController extends Controller
             'amount' => $amount
         ]);
     }
+
+    public function updateCart(Request $request)
+    {
+
+    }
 }

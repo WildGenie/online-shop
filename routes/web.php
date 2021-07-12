@@ -52,6 +52,7 @@ Route::get('/shopping-cart', [CartController::class, 'show'])->name('cart');
 Route::get('/add-product/{product:id}', [CartController::class, 'addToCart'])->name('cart-add');
 Route::get('/delete-product/{cart:id}', [CartController::class, 'removeCart'])->name('cart-remove');
 Route::get('/clear-cart', [CartController::class, 'clearCart'])->name('cart-clear');
+Route::get('/update-cart', [CartController::class, 'updateCart'])->name('cart-update');
 
 Route::get('/shopping-checkout', [CartController::class, 'showCheckout'])->name('checkout');
 
