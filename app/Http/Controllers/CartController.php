@@ -57,7 +57,11 @@ class CartController extends Controller
 
     public function clearCart()
     {
-        Cart::query()->delete();
+        $userId = auth()->id();
+
+        Cart::query()
+            ->where('user_id', '=', $userId)
+            ->delete();
 
         return redirect()->route('cart')->with('success', 'Your items was deleted');
     }
@@ -78,8 +82,9 @@ class CartController extends Controller
         ]);
     }
 
-    public function updateCart(Request $request)
-    {
-
-    }
+//    public function updateCart(Request $request)
+//    {
+//
+//        return redirect()->route('cart');
+//    }
 }

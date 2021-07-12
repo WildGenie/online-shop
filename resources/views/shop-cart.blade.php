@@ -56,7 +56,7 @@
               <div class="row">
                 <div class="col-12">
                   <div class="cart-buttons">
-                    <a class="theme-default-button" href="{{ 'cart-update' }}">Update Cart</a>
+                    <a class="theme-default-button" href="{{ route('cart-update') }}">Update Cart</a>
                     <a class="theme-default-button" href="{{ route('products') }}">Continue Shopping</a>
                     <a class="theme-default-button" href="{{ route('cart-clear') }}">Clear Cart</a>
                   </div>
