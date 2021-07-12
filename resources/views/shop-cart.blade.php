@@ -39,7 +39,7 @@
                             </td>
                             <td class="pro-quantity">
                                 <div class="pro-qty">
-                                    <input type="text" id="quantity" title="Quantity" value="1">
+                                    <input type="text" id="quantity" name="quantity" title="Quantity" value="1">
                                 </div>
                             </td>
                             <td class="pro-subtotal">
@@ -56,7 +56,7 @@
               <div class="row">
                 <div class="col-12">
                   <div class="cart-buttons">
-                    <a class="theme-default-button" href="#/">Update Cart</a>
+                    <a class="theme-default-button" href="{{ 'cart-update' }}">Update Cart</a>
                     <a class="theme-default-button" href="{{ route('products') }}">Continue Shopping</a>
                     <a class="theme-default-button" href="{{ route('cart-clear') }}">Clear Cart</a>
                   </div>

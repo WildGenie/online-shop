@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Cart;
 use App\Models\Product;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class CartController extends Controller
@@ -16,7 +17,7 @@ class CartController extends Controller
             ->where('user_id', '=', $userId)
             ->get();
 
-        $amount = collect($items)->sum('price');
+        $amount = $items->sum('price');
 
         return view('shop-cart', [
             'title' => 'Your shopping cart',
@@ -30,23 +31,11 @@ class CartController extends Controller
         $product = Product::find($id);
         $userId = auth()->id();
 
-        $cartQuery = Cart::query()->where("carts.user_id", "=", $userId);
-
-        $number = 1;
         $quantity = 1;
         $price = $product->price * $quantity;
 
-        if($cartQuery) {
-            $number = Cart::query()
-                ->select("*")
-                ->where("carts.user_id", "=", $userId)
-                ->get()
-                ->count();
-        }
-
         Cart::create([
             'user_id' => $userId,
-            'number' => ++$number,
             'quantity' => $quantity,
             'title' => $product->title,
             'description' => $product->description,
@@ -61,9 +50,7 @@ class CartController extends Controller
 
     public function removeCart($id)
     {
-        $item = Cart::find($id);
-
-        $item->delete();
+        Cart::find($id)->delete();
 
         return redirect()->route('cart')->with('success', 'Your item was deleted');
     }
@@ -80,14 +67,14 @@ class CartController extends Controller
         $userId = auth()->id();
 
         $items = Cart::query()
-            ->where('user_id', '=', $userId)
+            ->where('user_id', $userId)
             ->get();
 
-        $amount = collect($items)->sum('price');
+        $amount = $items->sum('price');
 
         return view('shop-checkout', [
             'items' => $items,
-            'amount' => $amount,
+            'amount' => $amount
         ]);
     }
 }
