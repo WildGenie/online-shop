@@ -1,5 +1,5 @@
 <head>
-    <title>Single Product – Diana – Furniture Store eCommerce Bootstrap5 Template</title>
+    <title>{{ $title }}</title>
 </head>
 
 <x-layout>
@@ -26,30 +26,22 @@
                           </div>
                           <div class="swiper-slide">
                             <div class="zoom zoom-hover">
-                              <a class="lightbox-image" data-fancybox="gallery" href="{{asset('img/shop/product-single/2.jpg')}}">
-                                <img src="{{asset('img/shop/product-single/2.jpg')}}" alt="Image-HasTech">
-                              </a>
+                                <img src="/storage/{{ $product->image }}" alt="Image-HasTech">
                             </div>
                           </div>
                           <div class="swiper-slide">
                             <div class="zoom zoom-hover">
-                              <a class="lightbox-image" data-fancybox="gallery" href="{{asset('img/shop/product-single/3.jpg')}}">
-                                <img src="{{asset('img/shop/product-single/3.jpg')}}" alt="Image-HasTech">
-                              </a>
+                                <img src="/storage/{{ $product->image }}" alt="Image-HasTech">
                             </div>
                           </div>
                           <div class="swiper-slide">
                             <div class="zoom zoom-hover">
-                              <a class="lightbox-image" data-fancybox="gallery" href="{{asset('img/shop/product-single/4.jpg')}}">
-                                <img src="{{asset('img/shop/product-single/3.jpg')}}" alt="Image-HasTech">
-                              </a>
+                                <img src="/storage/{{ $product->image }}" alt="Image-HasTech">
                             </div>
                           </div>
                           <div class="swiper-slide">
                             <div class="zoom zoom-hover">
-                              <a class="lightbox-image" data-fancybox="gallery" href="{{asset('img/shop/product-single/4.jpg')}}">
-                                <img src="{{asset('img/shop/product-single/4.jpg')}}" alt="Image-HasTech">
-                              </a>
+                                <img src="/storage/{{ $product->image }}" alt="Image-HasTech">
                             </div>
                           </div>
                         </div>
@@ -61,19 +53,19 @@
                     <div class="swiper-container single-product-nav-slider product-nav">
                       <div class="swiper-wrapper">
                         <div class="swiper-slide">
-                          <img src="{{asset('img/shop/product-single/nav1.jpg')}}" alt="Image-HasTech">
+                            <img src="/storage/{{ $product->image }}" alt="Image-HasTech">
                         </div>
                         <div class="swiper-slide">
-                          <img src="{{asset('img/shop/product-single/nav2.jpg')}}" alt="Image-HasTech">
+                            <img src="/storage/{{ $product->image }}" alt="Image-HasTech">
                         </div>
                         <div class="swiper-slide">
-                          <img src="{{asset('img/shop/product-single/nav3.jpg')}}" alt="Image-HasTech">
+                            <img src="/storage/{{ $product->image }}" alt="Image-HasTech">
                         </div>
                         <div class="swiper-slide">
-                          <img src="{{asset('img/shop/product-single/nav3.jpg')}}" alt="Image-HasTech">
+                            <img src="/storage/{{ $product->image }}" alt="Image-HasTech">
                         </div>
                         <div class="swiper-slide">
-                          <img src="{{asset('img/shop/product-single/nav4.jpg')}}" alt="Image-HasTech">
+                            <img src="/storage/{{ $product->image }}" alt="Image-HasTech">
                         </div>
                       </div>
 

@@ -22,10 +22,10 @@
                         <h4 class="widget-title">Quick Link</h4>
                         <div class="widget-menu-wrap">
                             <ul class="nav-menu">
-                                <li><a href="../page-search.blade.php">Search</a></li>
+                                <li><a href="{{ route('search') }}">Search</a></li>
                                 <li><a href="{{ route('about') }}">About</a></li>
                                 <li><a href="{{ route('contact') }}">Contact</a></li>
-                                <li><a href="shipping-policy.html">Shipping policy</a></li>
+                                <li><a href="{{ route('policy') }}">Shipping policy</a></li>
                                 <li><a href="wishlist.html">Wishlist</a></li>
                                 <li><a href="{{ route('products') }}">All Products</a></li>
                             </ul>
@@ -40,11 +40,11 @@
                         <h4 class="widget-title">Information</h4>
                         <div class="widget-menu-wrap">
                             <ul class="nav-menu">
-                                <li><a href="login.html">Login</a></li>
+                                <li><a href="{{ route('login') }}">Login</a></li>
                                 <li><a href="#/">My Account</a></li>
                                 <li><a href="#/">Terms & Conditions</a></li>
-                                <li><a href="../shop-shipping-policy.blade.php">Shipping policy</a></li>
-                                <li><a href="../shop-checkout.blade.php">Payment System</a></li>
+                                <li><a href="{{ route('policy') }}">Shipping policy</a></li>
+                                <li><a href="{{ route('checkout') }}">Payment System</a></li>
                                 <li><a href="#/">Promotional Offers</a></li>
                             </ul>
                         </div>

@@ -1,5 +1,3 @@
-@props(['items'])
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>Diana – Furniture Store eCommerce Bootstrap5 Template</title>
+    <title>Furniture store</title>
 
     <!--== Favicon ==-->
     <link rel="shortcut icon" href="{{ asset('img/favicon.ico') }}" type="image/x-icon" />

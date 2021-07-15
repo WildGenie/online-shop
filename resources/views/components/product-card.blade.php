@@ -5,73 +5,104 @@
     <div class="product-single-info">
         <h4 class="title">{{ $product->title }}</h4>
         <div class="prices">
-            <span class="price">Tk {{ $product->price }}</span>
+            <span class="price">USD {{ $product->price }}</span>
         </div>
         <div class="star-content">
             <x-product-stars :product="$product"/>
         </div>
         <p>{{ $product->description }}</p>
-        <div class="product-select-action">
-            <div class="select-item">
-                <div class="select-size-wrap">
-                    <span>Size :</span>
-                    <ul>
-                        <li class="active"><a href="#/">s</a></li>
-                        <li><a href="#/">m</a></li>
-                        <li><a href="#/">l</a></li>
-                        <li><a href="#/">xl</a></li>
-                    </ul>
+        <form action="{{ route('cart-add', $product->id) }}" method="get">
+            <div class="product-select-action">
+                <div class="select-item">
+                    <div class="select-size-wrap">
+                        <span class="pe-3">Size:</span>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="size" value="s">
+                            <label class="form-check-label" for="inlineRadio1">s</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="size" value="m">
+                            <label class="form-check-label" for="inlineRadio2">m</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="size" value="l">
+                            <label class="form-check-label" for="inlineRadio3">l</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="size" value="xl">
+                            <label class="form-check-label" for="inlineRadio3">xl</label>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="select-item">
-                <div class="select-color-wrap">
-                    <span>Color :</span>
-                    <ul>
-                        <li class="purple active"></li>
-                        <li class="violet"></li>
-                        <li class="black"></li>
-                        <li class="pink"></li>
-                        <li class="orange"></li>
-                    </ul>
+                <div class="select-item">
+                    <div class="select-color-wrap">
+                        <span>Color:</span>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="color" value="red">
+                            <label class="form-check-label" for="inlineRadio1">red</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="color" value="green">
+                            <label class="form-check-label" for="inlineRadio2">green</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="color" value="blue">
+                            <label class="form-check-label" for="inlineRadio3">blue</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="color" value="black">
+                            <label class="form-check-label" for="inlineRadio3">black</label>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            <div class="select-item">
-                <div class="select-material-wrap">
-                    <span>Material :</span>
-                    <ul>
-                        <li class="active"><a href="#/">metal</a></li>
-                        <li><a href="#/">resin</a></li>
-                        <li><a href="#/">leather</a></li>
-                        <li><a href="#/">slag</a></li>
-                        <li><a href="#/">fiber</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="product-action-simple">
-            <div class="product-quick-action">
-                <div class="product-quick-qty">
-                    <span>Quantity:</span>
-                    <div class="pro-qty">
-                        <input type="text" id="quantity" title="Quantity" value="1">
+                <div class="select-item">
+                    <div class="select-material-wrap">
+                        <span class="pe-1">Material:</span>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="material" value="metal">
+                            <label class="form-check-label" for="inlineRadio1">metal</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="material" value="resin">
+                            <label class="form-check-label" for="inlineRadio2">resin</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="material" value="leather">
+                            <label class="form-check-label" for="inlineRadio3">leather</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="material" value="fiber">
+                            <label class="form-check-label" for="inlineRadio3">fiber</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                            <input class="form-check-input" type="radio" name="material" value="slag">
+                            <label class="form-check-label" for="inlineRadio3">slag</label>
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="cart-wishlist-button">
-                <a href="shop-cart.blade.php" class="btn-cart">Add to cart</a>
-                <div class="product-wishlist">
-                    <a class="add-wishlist" href="wishlist.html">
-                            <span class="icon">
-                              <i class="bardy bardy-wishlist"></i>
-                              <i class="hover-icon bardy bardy-wishlist"></i>
-                            </span>
-                    </a>
+            <div class="product-action-simple">
+                <div class="product-quick-action">
+                    <div class="product-quick-qty">
+                        <span>Quantity:</span>
+                        <div class="pro-qty">
+                            <input type="text" name="quantity" value="1">
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-wishlist-button">
+                    <button type="submit" class="btn-cart">Add to cart</button>
+                    <div class="product-wishlist">
+                        <button type="submit" class="add-wishlist">
+                            <i class="bardy bardy-wishlist"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="buy-now-btn">
+                    <button type="submit" class="btn btn-Buy">Buy it now</button>
                 </div>
             </div>
-            <div class="buy-now-btn">
-                <button class="btn btn-Buy">Buy it now</button>
-            </div>
-        </div>
+        </form>
         <div class="product-action-bottom">
             <div class="social-sharing">
                 <span>Share:</span>

@@ -1,5 +1,5 @@
 <head>
-    <title>Product – Diana – Furniture Store eCommerce Bootstrap5 Template</title>
+    <title>{{ $title }}</title>
 </head>
 
 <x-layout>

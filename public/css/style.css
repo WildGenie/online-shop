@@ -1464,6 +1464,16 @@ section .container-fluid {
 .header-action-area .header-action .user-menu:hover .title {
   color: #ff383f;
 }
+
+@media not all and (min-resolution:.001dpcm) {
+    @supports (-webkit-appearance: none) and (stroke-color:transparent) {
+
+        .number-input.def-number-input.safari_only button:before,
+        .number-input.def-number-input.safari_only button:after {
+            margin-top: -.3rem;
+        }
+    }
+}
 .header-action-area .header-action .header-search {
   margin-left: 15px;
   position: relative;

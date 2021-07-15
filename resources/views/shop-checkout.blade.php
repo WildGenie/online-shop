@@ -1,5 +1,5 @@
 <head>
-    <title>Products Information – Diana – Furniture Store eCommerce Bootstrap5 Template</title>
+    <title>Products Information</title>
 </head>
 
 <x-layout>
@@ -90,7 +90,7 @@
                     </div>
                     <div class="col-12">
                       <div class="btn-box">
-                        <a class="btn-shipping" href="shop.blade.php">Continue to shipping</a>
+                        <a class="btn-shipping" href="{{ route('products') }}">Continue to shipping</a>
                         <a class="btn-return" href="{{ route('cart') }}">Return to cart</a>
                       </div>
                     </div>

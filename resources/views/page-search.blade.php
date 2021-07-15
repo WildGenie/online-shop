@@ -1,29 +1,10 @@
 <head>
-    <title>Search – Diana – Furniture Store eCommerce Bootstrap5 Template</title>
+    <title>{{ $title }}</title>
 </head>
 
 <x-layout>
 
-    <!--== Start Page Header Area Wrapper ==-->
-    <div class="page-header-area">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center">
-            <div class="page-header-content">
-              <h4 class="title" data-aos="fade-down" data-aos-duration="1200">Search</h4>
-              <nav class="breadcrumb-area" data-aos="fade-down" data-aos-duration="1000">
-                <ul class="breadcrumb">
-                  <li><a href="index.blade.php">Home</a></li>
-                  <li class="breadcrumb-sep">-</li>
-                  <li>Search</li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--== End Page Header Area Wrapper ==-->
+    <x-page-header :title="$title" />
 
     <!--== Start Search Area Wrapper ==-->
     <section class="search-area">
@@ -36,7 +17,7 @@
                 <div class="content">
                   <h4 class="title">Search for products on our site</h4>
                 </div>
-                <form action="/products?search{{ request('search') }}" method="GET">
+                <form action="{{ route('products') }}?search{{ request('search') }}" method="GET">
                   <div class="row">
                     <div class="col-12">
                       <div class="form-group">

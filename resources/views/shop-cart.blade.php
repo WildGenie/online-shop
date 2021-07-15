@@ -1,5 +1,5 @@
 <head>
-    <title>Your Shopping Cart – Diana – Furniture Store eCommerce Bootstrap5 Template</title>
+    <title>{{ $title }}</title>
 </head>
 
 <x-layout>
@@ -28,18 +28,18 @@
                     @foreach($items as $item)
                         <tr>
                             <td class="pro-thumbnail">
-                                <a href="shop.blade.php"><img src="storage/{{ $item->image }}" alt="Image-HasTech"></a>
+                                <a href="{{ route('products') }}/{{ $item->slug }}"><img src="storage/{{ $item->image }}" alt="Image-HasTech"></a>
                             </td>
                             <td class="pro-title">
-                                <h4 class="title"><a href="shop.blade.php">{{ $item->title }}</a></h4>
-                                <span>m / gold</span>
+                                <h4 class="title"><a href="{{ route('products') }}/{{ $item->slug }}">{{ $item->title }}</a></h4>
+                                <span>{{ $item->size }} / {{ $item->color }} / {{ $item->material }}</span>
                             </td>
                             <td class="pro-price">
                                 <span class="amount">USD {{ $item->price }}</span>
                             </td>
                             <td class="pro-quantity">
-                                <div class="pro-qty">
-                                    <input type="text" id="quantity" name="quantity" title="Quantity" value="1">
+                                <div class="def-number-input number-input">
+                                    {{ $item->quantity }}
                                 </div>
                             </td>
                             <td class="pro-subtotal">
@@ -56,7 +56,6 @@
               <div class="row">
                 <div class="col-12">
                   <div class="cart-buttons">
-                    <a class="theme-default-button" href="{{ route('cart-update') }}">Update Cart</a>
                     <a class="theme-default-button" href="{{ route('products') }}">Continue Shopping</a>
                     <a class="theme-default-button" href="{{ route('cart-clear') }}">Clear Cart</a>
                   </div>
