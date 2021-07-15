@@ -2,9 +2,11 @@
 
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\LoginController;
+use App\Http\Controllers\PostController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\RegisterController;
 use App\Models\Category;
+use App\Models\Post;
 use App\Models\Product;
 use Illuminate\Support\Facades\Route;
 
@@ -20,7 +22,11 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index', ['products' => Product::all(), 'categories' => Category::all()]);
+    return view('index', [
+        'products' => Product::latest()->get(),
+        'categories' => Category::all(),
+        'posts' => Post::all(),
+    ]);
 })->name('home');
 
 Route::get('/about', function () {
@@ -35,10 +41,6 @@ Route::get('/search', function () {
     return view('page-search', ['title' => 'Search']);
 })->name('search');
 
-Route::get('/blog', function () {
-    return view('blog', ['title' => 'News']);
-})->name('blog');
-
 Route::get('/policy', function () {
     return view('shop-shipping-policy', ['title' => 'Shipping policy']);
 })->name('policy');
@@ -46,6 +48,9 @@ Route::get('/policy', function () {
 Route::get('/sizes', function () {
     return view('shop-size-chart', ['title' => 'Size chart']);
 })->name('size');
+
+Route::get('/blog', [PostController::class, 'show'])->name('blog');
+Route::get('/blog/{post:slug}', [PostController::class, 'showSingle']);
 
 Route::get('/products', [ProductController::class, 'showProducts'])->name('products');
 Route::get('/products/{product:slug}', [ProductController::class, 'showSingle']);

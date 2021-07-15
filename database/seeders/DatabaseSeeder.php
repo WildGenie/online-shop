@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Category;
+use App\Models\Post;
 use App\Models\Product;
 use Illuminate\Database\Seeder;
 
@@ -24,5 +25,7 @@ class DatabaseSeeder extends Seeder
          Product::factory(10)->create(['category_id' => $category->id]);
          Product::factory(24)->create(['category_id' => $category2->id]);
          Product::factory(5)->create(['category_id' => $category3->id]);
+
+         Post::factory(20)->create();
     }
 }

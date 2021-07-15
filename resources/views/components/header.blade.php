@@ -27,7 +27,7 @@
                             </ul>
                         </li>
                         <li class="has-submenu">
-                            <a href="#/"><span>Blog</span></a>
+                            <a href="{{ route('blog') }}"><span>Blog</span></a>
                         </li>
                         <li><a href="{{ route('contact') }}"><span>Contact</span></a></li>
                     </ul>
