@@ -114,26 +114,30 @@
                         <div class="header-mini-cart">
                             <button class="mini-cart-toggle">
                                 <i class="icon bardy bardy-shopping-cart"></i>
-                                <span class="number">2</span>
+                                <span class="number">{{ auth()->check() && session('cart') ? count(session('cart')) : 0 }}</span>
                             </button>
                             <div class="mini-cart-dropdown">
                                 <h4 class="cart-title">Your cart</h4>
-{{--                                @foreach($items as $item)--}}
-{{--                                    <div class="cart-item-wrap">--}}
-{{--                                        <div class="cart-item">--}}
-{{--                                            <div class="thumb">--}}
-{{--                                                <a href="#/"><img class="w-100" src="{{ $item->image }}" alt="Image-HasTech"></a>--}}
-{{--                                                <a class="remove" href="javascript:void(0);"><i class="fa fa-trash-o"></i></a>--}}
-{{--                                            </div>--}}
-{{--                                            <div class="content">--}}
-{{--                                                <h5 class="title"><a href="#/">{{ $item->name }}</a></h5>--}}
-{{--                                                <span>USD {{ $item->price }}</span>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
-{{--                                    </div>--}}
-{{--                                @endforeach--}}
+                                <?php $amount = 0 ?>
+                                @if (auth()->check() && session('cart'))
+                                    @foreach (session('cart') as $id => $item)
+                                        <?php $amount += $item['price'] * $item['quantity'] ?>
+                                        <div class="cart-item-wrap">
+                                            <div class="cart-item">
+                                                <div class="thumb">
+                                                    <a href="{{ route('products') }}/{{ $item['slug'] }}"><img class="w-100" src="storage/{{ $item['image'] }}" alt="Image-HasTech"></a>
+                                                    <a class="remove" href="{{ route('cart-remove', $item['id']) }}"><i class="fa fa-trash-o"></i></a>
+                                                </div>
+                                                <div class="content">
+                                                    <h5 class="title"><a href="{{ route('products') }}/{{ $item['slug'] }}">{{ $item['title'] }}</a></h5>
+                                                    <span>USD ${{ $item['price'] }}</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                @endif
                                 <div class="mini-cart-footer">
-                                    <h4>Subtotal: <span class="total">Tk 130.00</span></h4>
+                                    <h4>Subtotal: <span class="total">USD ${{ $amount }}</span></h4>
                                     <div class="cart-btn">
                                         <a href="{{ route('cart') }}">View Cart</a>
                                         <a href="{{ route('checkout') }}">Checkout</a>

@@ -1711,7 +1711,8 @@ section .container-fluid {
   color: #fff;
 }
 .header-action-area .header-action .header-mini-cart .mini-cart-dropdown.show {
-  height: 393px;
+  height: 392px;
+  overflow: auto;
 }
 
 .off-canvas-wrapper {

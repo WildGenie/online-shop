@@ -45,7 +45,7 @@
 
                 </div>
                 <div class="prices">
-                    <span class="price">USD {{ $product->price }} </span>
+                    <span class="price">USD ${{ $product->price }} </span>
                 </div>
             </div>
         </div>

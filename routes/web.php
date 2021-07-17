@@ -57,10 +57,10 @@ Route::get('/products/{product:slug}', [ProductController::class, 'showSingle'])
 
 
 //=====================  shopping cart
-Route::get('/shopping-cart', [CartController::class, 'show'])->name('cart');
-Route::get('/add-product/{product:id}', [CartController::class, 'addToCart'])->name('cart-add');
-Route::get('/delete-product/{cart:id}', [CartController::class, 'removeCart'])->name('cart-remove');
-Route::get('/clear-cart', [CartController::class, 'clearCart'])->name('cart-clear');
+Route::get('/shopping-cart', [ProductController::class, 'showCart'])->name('cart');
+Route::get('/add-product/{product:id}', [ProductController::class, 'addToCart'])->name('cart-add');
+Route::get('/delete-product/{product:id}', [ProductController::class, 'deleteFromCart'])->name('cart-remove');
+Route::get('/clear-cart', [ProductController::class, 'clearCart'])->name('cart-clear');
 
 Route::get('/shopping-checkout', [CartController::class, 'showCheckout'])->name('checkout');
 

@@ -5,7 +5,7 @@
     <div class="product-single-info">
         <h4 class="title">{{ $product->title }}</h4>
         <div class="prices">
-            <span class="price">USD {{ $product->price }}</span>
+            <span class="price">USD ${{ $product->price }}</span>
         </div>
         <div class="star-content">
             <x-product-stars :product="$product"/>
