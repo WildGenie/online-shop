@@ -2,14 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Filters\PostFilter;
 use App\Models\Post;
 
 class PostController extends Controller
 {
-    public function show()
+    public function show(PostFilter $request)
     {
 
-        $posts = Post::paginate(10);
+        $posts = Post::filter($request)->paginate(10);
 
         return view('blog', [
             'title' => 'News',

@@ -5,9 +5,9 @@
         <h4 class="sidebar-title">Search</h4>
         <div class="sidebar-body">
             <div class="sidebar-search-form">
-                <form action="#">
+                <form action="#" method="GET">
                     <div class="form-group">
-                        <input class="form-control" type="text" placeholder="Enter key words">
+                        <input class="form-control" type="text" name="search" placeholder="Enter key words">
                         <button type="submit" class="btn-src">Search</button>
                     </div>
                 </form>
@@ -21,19 +21,22 @@
         <h4 class="sidebar-title">Recent Post</h4>
         <div class="sidebar-body">
             <div class="sidebar-post-item">
-                @for($i = 0; $i < 3; $i++)
+                @foreach($posts as $post)
+                    @if($loop->iteration > 3)
+                        @break
+                    @endif
                     <div class="post-item">
                         <div class="thumb">
-                            <a href="{{ route('blog') }}/{{ $posts[$i]->slug }}"><img src="/storage/{{ $posts[$i]->image }}" alt="Image-HasTech"></a>
+                            <a href="{{ route('blog') }}/{{ $post->slug }}"><img src="/storage/{{ $post->image }}" alt="Image-HasTech"></a>
                         </div>
                         <div class="content">
                             <h4 class="title">
-                                <a href="{{ route('blog') }}/{{ $posts[$i]->slug }}">{{ $posts[$i]->title }}</a>
+                                <a href="{{ route('blog') }}/{{ $post->slug }}">{{ $post->title }}</a>
                             </h4>
-                            <p>{{ substr($posts[$i]->body, 0, 30) }} ...</p>
+                            <p>{{ substr($post->body, 0, 30) }} ...</p>
                         </div>
                     </div>
-                @endfor
+                @endforeach
             </div>
         </div>
     </div>

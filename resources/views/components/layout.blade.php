@@ -61,7 +61,7 @@
     </div>
     <!--== End Preloader Content ==-->
 
-    <x-header />
+    @include('header')
 
     <x-message-success />
 
@@ -72,7 +72,7 @@
 
     </main>
 
-    <x-footer />
+    @include('footer')
 
     <x-scroll-top-button />
 </div>

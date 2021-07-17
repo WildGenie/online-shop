@@ -11,7 +11,7 @@
                                 <img class="logo-main" src="{{ asset('img/logo.svg') }}" alt="Logo" />
                             </a>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A ad doloribus facilis fuga itaque modi nesciunt, nihil possimus saepe similique. Asperiores enim fugiat laborum. A accusantium aliquam aliquid earum fuga iure molestias possimus provident quas voluptatem! Ad, dolore, expedita impedit libero magnam nihil omnis quas similique temporibus veritatis vero voluptatem.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deserunt expedita natus placeat. Deleniti eaque explicabo ipsum nam repudiandae similique!</p>
                     </div>
                     <!--== End widget Item ==-->
                 </div>
