@@ -11,7 +11,7 @@
             <x-product-stars :product="$product"/>
         </div>
         <p>{{ $product->description }}</p>
-        <form action="{{ route('cart-add', $product->id) }}" method="get">
+        <form action="{{ route('check-btn', $product->id) }}" method="get">
             <div class="product-select-action">
                 <div class="select-item">
                     <div class="select-size-wrap">
@@ -91,15 +91,15 @@
                     </div>
                 </div>
                 <div class="cart-wishlist-button">
-                    <button type="submit" class="btn-cart">Add to cart</button>
+                    <button type="submit" name="add" value="cart" class="btn-cart">Add to cart</button>
                     <div class="product-wishlist">
-                        <button type="submit" class="add-wishlist">
+                        <button type="submit" name="add" value="wishlist" class="add-wishlist">
                             <i class="bardy bardy-wishlist"></i>
                         </button>
                     </div>
                 </div>
                 <div class="buy-now-btn">
-                    <button type="submit" class="btn btn-Buy">Buy it now</button>
+                    <button type="submit" name="add" value="buy" class="btn btn-Buy">Buy it now</button>
                 </div>
             </div>
         </form>

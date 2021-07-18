@@ -127,7 +127,7 @@
                               <tr class="order-total">
                                 <th>Grand Total</th>
                                 <td>
-                                  <span class="amount"><span>USD {{ $amount }}</span></span>
+                                  <span class="amount"><span>USD ${{ $amount }}</span></span>
                                 </td>
                               </tr>
                             </tbody>

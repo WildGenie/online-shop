@@ -972,7 +972,7 @@ section .container-fluid {
   }
 }
 .header-area .container .row .col:nth-child(3) {
-  max-width: 258px;
+  max-width: 330px;
 }
 @media only screen and (max-width: 991px) {
   .header-area .container .row .col:nth-child(3) {
@@ -1713,6 +1713,30 @@ section .container-fluid {
 .header-action-area .header-action .header-mini-cart .mini-cart-dropdown.show {
   height: 392px;
   overflow: auto;
+}
+
+.header-wishlist {
+    height: 80px;
+    line-height: 80px;
+    margin-left: 25px;
+    position: relative;
+}
+
+.header-wishlist .icon {
+    color: #1a202c;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.header-wishlist .number {
+    color: #1a202c;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.25px;
+    line-height: 30px;
+    position: relative;
+    right: 1px;
+    top: -15px;
 }
 
 .off-canvas-wrapper {

@@ -17,7 +17,7 @@
                 </div>
                 <div class="breadcrumb-area">
                   <ul>
-                    <li><a class="active" href="shop-cart.blade.php">Cart</a><i class="fa fa-angle-right"></i></li>
+                    <li><a class="active" href="{{ route('cart') }}">Cart</a><i class="fa fa-angle-right"></i></li>
                     <li class="active">Information<i class="fa fa-angle-right"></i></li>
                     <li>Shipping<i class="fa fa-angle-right"></i></li>
                     <li>Payment</li>
@@ -32,10 +32,6 @@
                     <div class="name">{{ auth()->user()->name }}</div>
                     <div>{{ auth()->user()->email }}</div>
                   </p>
-                </div>
-                <div class="form-check form-check-inline">
-                  <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                  <label class="form-check-label" for="inlineCheckbox1">Keep me up to date on news and exclusive offers</label>
                 </div>
                 <div class="edit-checkout-form">
                   <h4 class="title">Shipping address</h4>
@@ -90,7 +86,7 @@
                     </div>
                     <div class="col-12">
                       <div class="btn-box">
-                        <a class="btn-shipping" href="{{ route('products') }}">Continue to shipping</a>
+                        <a class="btn-shipping" href="#">Continue to shipping</a>
                         <a class="btn-return" href="{{ route('cart') }}">Return to cart</a>
                       </div>
                     </div>
@@ -101,26 +97,31 @@
             <div class="col-lg-5">
               <div class="shipping-cart-subtotal-wrapper">
                 <div class="shipping-cart-subtotal">
-                    @foreach($items as $item)
-                        <div class="shipping-cart-item">
-                            <div class="thumb">
-                                <img src="storage/{{ $item->image }}" alt="">
-                                <span class="quantity">1</span>
+                    <?php $amount = 0 ?>
+                    @if (auth()->check() && session('cart'))
+                        @foreach (session('cart') as $id => $item)
+                            <?php $amount += $item['price'] * $item['quantity'] ?>
+                            <div class="shipping-cart-item">
+                                <div class="thumb">
+                                    <img src="storage/{{ $item['image'] }}" alt="">
+                                    <span class="quantity">{{ $item['quantity'] }}</span>
+                                    <a class="remove" href="{{ route('cart-remove', $item['id']) }}"><i class="fa fa-trash-o"></i></a>
+                                </div>
+                                <div class="content">
+                                    <h4 class="title">{{ $item['title'] }}</h4>
+                                    <span class="info">{{ $item['size'] }} / {{ $item['color'] }}</span>
+                                    <span class="price">${{ $item['price'] }}</span>
+                                </div>
                             </div>
-                            <div class="content">
-                                <h4 class="title">{{ $item->title }}</h4>
-                                <span class="info">m / gold</span>
-                                <span class="price">{{ $item->price }}</span>
-                            </div>
-                        </div>
-                    @endforeach
+                        @endforeach
+                    @endif
                   <div class="shipping-subtotal">
-                    <p><span>Subtotal</span><span><strong>USD {{ $amount }}</strong></span></p>
+                    <p><span>Subtotal</span><span><strong>USD ${{ $amount }}</strong></span></p>
                     <p><span>Shipping</span><span>Calculated at next step</span></p>
                   </div>
                   <div class="shipping-total">
                     <p class="total">Total</p>
-                    <p class="price">USD {{ $amount }}</p>
+                    <p class="price">USD ${{ $amount }}</p>
                   </div>
                 </div>
               </div>

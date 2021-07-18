@@ -109,6 +109,17 @@
                     </div>
                     {{--==         END SEARCH          ==--}}
 
+                    {{--==          WISHLIST          ==--}}
+                    <div class="header-action">
+                        <div class="header-wishlist">
+                            <a href="{{ route('wishlist') }}">
+                                <i class="icon bardy bardy-wishlist"></i>
+                                <span class="number">{{ auth()->check() && session('wishlist') ? count(session('wishlist')) : 0 }}</span>
+                            </a>
+                        </div>
+                    </div>
+                    {{--==          END WISHLIST          ==--}}
+
                     {{--==          SHOPPING CART          ==--}}
                     <div class="header-action">
                         <div class="header-mini-cart">

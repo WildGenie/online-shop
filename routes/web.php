@@ -62,6 +62,15 @@ Route::get('/add-product/{product:id}', [ProductController::class, 'addToCart'])
 Route::get('/delete-product/{product:id}', [ProductController::class, 'deleteFromCart'])->name('cart-remove');
 Route::get('/clear-cart', [ProductController::class, 'clearCart'])->name('cart-clear');
 
+//=====================  wishlist
+Route::get('/wishlist', function () {
+    return view('wishlist', ['title' => 'Your wishlist']);
+})->name('wishlist');
+Route::get('/add-to-wishlist/{product:id}', [ProductController::class, 'addToWishlist'])->name('wishlist-add');
+Route::get('/delete-from-wishlist/{product:id}', [ProductController::class, 'deleteFromWishlist'])->name('wishlist-remove');
+Route::get('/clear-wishlist', [ProductController::class, 'clearWishlist'])->name('wishlist-clear');
+
+Route::get('/add/{product:id}', [ProductController::class, 'checkButton'])->name('check-btn');
 Route::get('/shopping-checkout', [CartController::class, 'showCheckout'])->name('checkout');
 
 

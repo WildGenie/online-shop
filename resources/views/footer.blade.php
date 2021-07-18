@@ -26,7 +26,7 @@
                                 <li><a href="{{ route('about') }}">About</a></li>
                                 <li><a href="{{ route('contact') }}">Contact</a></li>
                                 <li><a href="{{ route('policy') }}">Shipping policy</a></li>
-                                <li><a href="wishlist.html">Wishlist</a></li>
+                                <li><a href="{{ route('wishlist') }}">Wishlist</a></li>
                                 <li><a href="{{ route('products') }}">All Products</a></li>
                             </ul>
                         </div>
@@ -42,10 +42,9 @@
                             <ul class="nav-menu">
                                 <li><a href="{{ route('login') }}">Login</a></li>
                                 <li><a href="#/">My Account</a></li>
-                                <li><a href="#/">Terms & Conditions</a></li>
                                 <li><a href="{{ route('policy') }}">Shipping policy</a></li>
+                                <li><a href="{{ route('size') }}">Size chart</a></li>
                                 <li><a href="{{ route('checkout') }}">Payment System</a></li>
-                                <li><a href="#/">Promotional Offers</a></li>
                             </ul>
                         </div>
                     </div>
