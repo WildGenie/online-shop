@@ -24,8 +24,8 @@
                   </ul>
                 </div>
                 <div class="article-next-previous">
-                  <a class="previous" href="#/"><i class="fa fa-long-arrow-left"></i>Previous</a>
-                  <a class="next" href="#/">Next<i class="fa fa-long-arrow-right"></i></a>
+                  <a class="previous" href="{{ route('blog') }}/{{ $previous->slug }}"><i class="fa fa-long-arrow-left"></i>Previous</a>
+                  <a class="next" href="{{ route('blog') }}/{{ $next->slug }}">Next<i class="fa fa-long-arrow-right"></i></a>
                 </div>
               </div>
             </div>

@@ -121,6 +121,7 @@
                                 <?php $amount = 0 ?>
                                 @if (auth()->check() && session('cart'))
                                     @foreach (session('cart') as $id => $item)
+
                                         <?php $amount += $item['price'] * $item['quantity'] ?>
                                         <div class="cart-item-wrap">
                                             <div class="cart-item">
