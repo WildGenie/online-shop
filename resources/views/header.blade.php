@@ -132,13 +132,12 @@
                                 <?php $amount = 0 ?>
                                 @if (auth()->check() && session('cart'))
                                     @foreach (session('cart') as $id => $item)
-
                                         <?php $amount += $item['price'] * $item['quantity'] ?>
                                         <div class="cart-item-wrap">
                                             <div class="cart-item">
                                                 <div class="thumb">
                                                     <a href="{{ route('products') }}/{{ $item['slug'] }}"><img class="w-100" src="storage/{{ $item['image'] }}" alt="Image-HasTech"></a>
-                                                    <a class="remove" href="{{ route('cart-remove', $item['id']) }}"><i class="fa fa-trash-o"></i></a>
+                                                    <a class="remove" href="{{ route('product-remove', ['id' => $item['id'], 'bag' => 'cart']) }}"><i class="fa fa-trash-o"></i></a>
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="title"><a href="{{ route('products') }}/{{ $item['slug'] }}">{{ $item['title'] }}</a></h5>

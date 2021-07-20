@@ -10,7 +10,7 @@
             <div class="product-action">
                 <div class="addto-wrap">
                     @auth
-                        <a class="add-cart" href="{{ route('cart-add', [$product->id]) }}">
+                        <a class="add-cart" href="{{ route('product-add', ['id' => $product->id, 'bag' => 'cart']) }}">
                     @else
                         <a class="add-cart" href="{{ route('register') }}">
                     @endauth
@@ -19,7 +19,11 @@
                             <i class="hover-icon bardy bardy-shopping-cart"></i>
                         </span>
                     </a>
-                    <a class="add-wishlist" href="{{ route('wishlist-add', [$product->id]) }}">
+                    @auth
+                        <a class="add-wishlist" href="{{ route('product-add', ['id' => $product->id, 'bag' => 'wishlist']) }}">
+                    @else
+                        <a class="add-cart" href="{{ route('register') }}">
+                    @endauth
                         <span class="icon">
                             <i class="bardy bardy-wishlist"></i>
                             <i class="hover-icon bardy bardy-wishlist"></i>

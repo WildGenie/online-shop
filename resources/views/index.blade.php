@@ -5,14 +5,14 @@
       <div class="swiper-container swiper-slide-gap home-slider-container default-slider-container">
         <div class="swiper-wrapper home-slider-wrapper slider-default">
           <div class="swiper-slide">
-            <div class="slider-content-area" data-bg-img="{{ asset('img/slider/slider-01.jpg') }}">
+            <div class="slider-content-area" data-bg-img="https://picsum.photos/id/42/1920/800">
               <div class="container">
                 <div class="row align-items-center ">
                   <div class="col-12">
                     <div class="slider-content">
                       <h5 class="sub-title">NEW COLLECTION 2021</h5>
                       <h2 class="title">New Interior Concept <br>Wooden Chairs</h2>
-                      <a class="btn-slider" href="shop.blade.php">Shop Now</a>
+                      <a class="btn-slider" href="{{ route('products') }}">Shop Now</a>
                     </div>
                   </div>
                 </div>
@@ -20,14 +20,14 @@
             </div>
           </div>
           <div class="swiper-slide">
-            <div class="slider-content-area" data-bg-img="{{ asset('img/slider/slider-02.jpg') }}">
+            <div class="slider-content-area" data-bg-img="https://picsum.photos/id/528/1920/800">
               <div class="container">
                 <div class="row align-items-center ">
                   <div class="col-12">
                     <div class="slider-content">
                       <h5 class="sub-title">NEW COLLECTION 2021</h5>
                       <h2 class="title">The Brighten Up <br>Interior Collection</h2>
-                      <a class="btn-slider" href="shop.blade.php">Shop Now</a>
+                      <a class="btn-slider" href="{{ route('products') }}">Shop Now</a>
                     </div>
                   </div>
                 </div>
@@ -83,8 +83,8 @@
         <div class="row no-gutter about-position-style">
           <div class="col-lg-7">
             <div class="about-thumb">
-              <div class="image-1" data-bg-img="{{ asset('img/about/1.jpg') }}"></div>
-              <div class="image-2" data-bg-img="{{ asset('img/about/2.jpg') }}"></div>
+              <div class="image-1" data-bg-img="https://picsum.photos/id/534/1920/800"></div>
+              <div class="image-2" data-bg-img="https://picsum.photos/id/625/429/548"></div>
             </div>
           </div>
           <div class="col-lg-5">

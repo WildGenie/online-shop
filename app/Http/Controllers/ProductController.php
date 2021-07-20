@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Cart;
 use App\Models\Product;
 use App\Models\Category;
 
@@ -44,7 +43,7 @@ class ProductController extends Controller
         ]);
     }
 
-    public function addToCart($id, Request $request)
+    public function addToBag($id, $bag, Request $request)
     {
 
         if (!auth()->check()) {
@@ -53,7 +52,7 @@ class ProductController extends Controller
 
         $product = Product::find($id);
 
-        $cart = session()->get('cart');
+        $cart = session()->get($bag);
 
         // initial data
         $quantity = 1;
@@ -87,18 +86,18 @@ class ProductController extends Controller
                 ]
             ];
 
-            session()->put('cart', $cart);
+            session()->put($bag, $cart);
 
-            return redirect()->back()->with('success', 'Product added to cart successfully!');
+            return redirect()->back()->with('success', 'Product added to ' .$bag. ' successfully!');
         }
 
         if (isset($cart[$id])) {
 
             $cart[$id]['quantity']++;
 
-            session()->put('cart', $cart);
+            session()->put($bag, $cart);
 
-            return redirect()->back()->with('success', 'Product added to cart successfully!');
+            return redirect()->back()->with('success', 'Product added to ' .$bag . ' successfully!');
         }
 
         // if item not exist in cart then add to cart with quantity = 1
@@ -116,135 +115,45 @@ class ProductController extends Controller
             'stars' => $product->stars,
         ];
 
-        session()->put('cart', $cart);
+        session()->put($bag, $cart);
 
-        return redirect()->back()->with('success', 'Product added to cart successfully!');
+        return redirect()->back()->with('success', 'Product added to ' . $bag . ' successfully!');
     }
 
-    public function deleteFromCart($id)
+    public function deleteFromBag($id, $bag)
     {
         if($id) {
-            $cart = session()->get('cart');
+            $cart = session()->get($bag);
 
             if(isset($cart[$id])) {
                 unset($cart[$id]);
 
-                session()->put('cart', $cart);
+                session()->put($bag, $cart);
             }
 
-            return redirect()->route('cart')->with('success', 'Product removed successfully!');
+            return redirect()->route($bag)->with('success', 'Product removed successfully!');
         }
     }
 
-    public function clearCart()
+    public function clearBag($bag)
     {
-        session()->forget('cart');
+        session()->forget($bag);
 
-        return redirect()->back()->with('success', 'Your cart was cleared!');
-    }
-
-    public function addToWishlist($id, Request $request)
-    {
-
-        if (!auth()->check()) {
-            return redirect()->route('register');
-        }
-
-        $product = Product::find($id);
-
-        $wishlist = session()->get('wishlist');
-
-        // initial data
-        $size = 'm';
-        $color = $product->color;
-        $material = 'leather';
-        $price = $product->price;
-
-        // check on request / if user adds product from the single product page
-        if ($request['size'] && $request['color'] && $request['material'] && $request['quantity']) {
-            $size = $request['size'];
-            $color = $request['color'];
-            $material = $request['material'];
-        }
-
-        if (!$wishlist) {
-            $wishlist = [
-                $id => [
-                    'id' => $product->id,
-                    'price' => $price,
-                    'material' => $material,
-                    'color' => $color,
-                    'size' => $size,
-                    'slug' => $product->slug,
-                    'title' => $product->title,
-                    'description' => $product->description,
-                    'image' => $product->image,
-                    'stars' => $product->stars,
-                ]
-            ];
-
-            session()->put('wishlist', $wishlist);
-
-            return redirect()->back()->with('success', 'Product added to wishlist successfully!');
-        }
-
-        if (isset($wishlist[$id])) {
-            return redirect()->back()->with('success', 'This product already in your cart!');
-        }
-
-        // if item not exist in cart then add to cart with quantity = 1
-        $wishlist[$id] = [
-            'id' => $product->id,
-            'price' => $price,
-            'material' => $material,
-            'color' => $color,
-            'size' => $size,
-            'slug' => $product->slug,
-            'title' => $product->title,
-            'description' => $product->description,
-            'image' => $product->image,
-            'stars' => $product->stars,
-        ];
-
-        session()->put('wishlist', $wishlist);
-
-        return redirect()->back()->with('success', 'Product added to wishlist successfully!');
-    }
-
-    public function deleteFromWishlist($id)
-    {
-        if($id) {
-            $wishlist = session()->get('wishlist');
-
-            if(isset($wishlist[$id])) {
-                unset($wishlist[$id]);
-
-                session()->put('wishlist', $wishlist);
-            }
-
-            return redirect()->route('wishlist')->with('success', 'Product removed successfully!');
-        }
-    }
-
-    public function clearWishlist()
-    {
-        session()->forget('wishlist');
-
-        return redirect()->back()->with('success', 'Your wishlist was cleared!');
+        return redirect()->back()->with('success', 'Your ' .$bag. ' was cleared!');
     }
 
     public function checkButton($id, Request $request)
     {
         if ($request['add'] && $request['add'] == 'cart') {
-            return $this->addToCart($id, $request);
+            return $this->addToCart($id, 'cart', $request);
         }
 
         if ($request['add'] && $request['add'] == 'wishlist') {
-            return $this->addToWishlist($id, $request);
+            return $this->addToCart($id, 'wishlist', $request);
         }
 
         if ($request['add'] && $request['add'] == 'buy') {
-            $this->addToCart($id, $request);
+            $this->addToCart($id, 'cart', $request);
             return redirect()->route('checkout')->with('success', 'Now you can buy it!');
         }
     }

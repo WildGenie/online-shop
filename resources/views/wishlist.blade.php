@@ -38,12 +38,12 @@
                                                 <span class="amount">USD ${{ $item['price'] }}</span>
                                             </td>
                                             <td class="pro-add">
-                                                <a href="{{ route('cart-add', $item['id']) }}">Add
+                                                <a href="{{ route('product-add', ['id' => $item['id'], 'bag' => 'cart']) }}">Add
                                                     <i class="icon bardy bardy-shopping-cart"></i>
                                                 </a>
                                             </td>
                                             <td class="pro-remove">
-                                                <a class="remove" href="{{ route('wishlist-remove', $item['id']) }}"><i class="fa fa-trash-o"></i></a>
+                                                <a class="remove" href="{{ route('product-remove', ['id' => $item['id'], 'bag' => 'wishlist']) }}"><i class="fa fa-trash-o"></i></a>
                                             </td>
                                         </tr>
                                     @endforeach
@@ -55,7 +55,7 @@
                             <div class="col-12">
                                 <div class="cart-buttons">
                                     <a class="theme-default-button" href="{{ route('products') }}">Continue Shopping</a>
-                                    <a class="theme-default-button" href="{{ route('wishlist-clear') }}">Clear Wishlist</a>
+                                    <a class="theme-default-button" href="{{ route('bag-clear', ['bag' => 'wishlist']) }}">Clear Wishlist</a>
                                 </div>
                             </div>
                         </div>

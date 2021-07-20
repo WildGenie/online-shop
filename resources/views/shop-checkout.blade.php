@@ -1,5 +1,5 @@
 <head>
-    <title>Products Information</title>
+    <title>{{ $title }}</title>
 </head>
 
 <x-layout>
@@ -33,46 +33,44 @@
                     <div>{{ auth()->user()->email }}</div>
                   </p>
                 </div>
-                <div class="edit-checkout-form">
+                <form action="{{ route('checkout') }}" method="post" class="edit-checkout-form">
+                    @csrf
                   <h4 class="title">Shipping address</h4>
                   <div class="row row-gutter-12">
                     <div class="col-lg-6">
                       <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInputGrid" placeholder="name" value="{{ auth()->user()->name }}">
+                        <input type="text" name="name" class="form-control" id="floatingInputGrid" placeholder="name" value="{{ auth()->user()->name }}">
                         <label for="floatingInputGrid">First name (optional)</label>
+                          @error('name')
+                          <div class="invalid-feedback">{{ $message }}</div>
+                          @enderror
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInput2Grid" placeholder="name" value="Demo">
+                        <input type="text" name="lastname" class="form-control" id="floatingInput2Grid" placeholder="name" value="Demo">
                         <label for="floatingInput2Grid">Last name</label>
+                          @error('lastName')
+                          <div class="invalid-feedback">{{ $message }}</div>
+                          @enderror
                       </div>
                     </div>
                     <div class="col-lg-12">
                       <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInput3Grid" placeholder="address" value="">
+                        <input type="text" name="address" class="form-control" id="floatingInput3Grid" placeholder="address" value="">
                         <label for="floatingInput3Grid">Address</label>
-                      </div>
-                    </div>
-                    <div class="col-lg-12">
-                      <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInput4Grid" placeholder="address" value="">
-                        <label for="floatingInput4Grid">Apartment, suite, etc. (optional)</label>
-                      </div>
-                    </div>
-                    <div class="col-lg-12">
-                      <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInput5Grid" placeholder="address" value="">
-                        <label for="floatingInput5Grid">Apartment, suite, etc. (optional)</label>
+                          @error('address')
+                          <div class="invalid-feedback">{{ $message }}</div>
+                          @enderror
                       </div>
                     </div>
                     <div class="col-lg-6">
                       <div class="form-floating">
-                        <select class="form-select form-control" id="floatingInput6rid" aria-label="Floating label select example">
-                          <option selected>Bangladesh</option>
-                          <option value="1">Afghanistan</option>
-                          <option value="2">Åland Islands</option>
-                          <option value="3">Albania</option>
+                        <select name="country" class="form-select form-control" id="floatingInput6rid" aria-label="Floating label select example">
+                          <option value="bangladesh" selected>Bangladesh</option>
+                          <option value="afganistan">Afghanistan</option>
+                          <option value="alandislands">Åland Islands</option>
+                          <option value="albania">Albania</option>
                         </select>
                         <div class="field-caret"></div>
                         <label for="floatingInput6rid">Country/Region</label>
@@ -80,18 +78,21 @@
                     </div>
                     <div class="col-lg-6">
                       <div class="form-floating">
-                        <input type="text" class="form-control" id="floatingInput7Grid" placeholder="address" value="">
+                        <input type="text" name="postalcode" class="form-control" id="floatingInput7Grid" placeholder="address" value="">
                         <label for="floatingInput7Grid">Postal code</label>
+                          @error('postalCode')
+                          <div class="invalid-feedback">{{ $message }}</div>
+                          @enderror
                       </div>
                     </div>
                     <div class="col-12">
                       <div class="btn-box">
-                        <a class="btn-shipping" href="#">Continue to shipping</a>
+                        <button type="submit" class="btn-shipping">Continue to shipping</button>
                         <a class="btn-return" href="{{ route('cart') }}">Return to cart</a>
                       </div>
                     </div>
                   </div>
-                </div>
+                </form>
               </div>
             </div>
             <div class="col-lg-5">
@@ -105,7 +106,7 @@
                                 <div class="thumb">
                                     <img src="storage/{{ $item['image'] }}" alt="">
                                     <span class="quantity">{{ $item['quantity'] }}</span>
-                                    <a class="remove" href="{{ route('cart-remove', $item['id']) }}"><i class="fa fa-trash-o"></i></a>
+                                    <a class="remove" href="{{ route('product-remove', ['id' => $item['id'], 'bag' => 'cart']) }}"><i class="fa fa-trash-o"></i></a>
                                 </div>
                                 <div class="content">
                                     <h4 class="title">{{ $item['title'] }}</h4>

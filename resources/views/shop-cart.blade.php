@@ -49,7 +49,7 @@
                                     <span class="subtotal-amount">USD ${{ $item['price'] * $item['quantity'] }}</span>
                                 </td>
                                 <td class="pro-remove">
-                                    <a class="remove" href="{{ route('cart-remove', $item['id']) }}"><i class="fa fa-trash-o"></i></a>
+                                    <a class="remove" href="{{ route('product-remove', ['id' => $item['id'], 'bag' => 'cart']) }}"><i class="fa fa-trash-o"></i></a>
                                 </td>
                             </tr>
                         @endforeach
@@ -61,7 +61,7 @@
                 <div class="col-12">
                   <div class="cart-buttons">
                     <a class="theme-default-button" href="{{ route('products') }}">Continue Shopping</a>
-                    <a class="theme-default-button" href="{{ route('cart-clear') }}">Clear Cart</a>
+                    <a class="theme-default-button" href="{{ route('bag-clear', ['bag' => 'cart']) }}">Clear Cart</a>
                   </div>
                 </div>
               </div>
