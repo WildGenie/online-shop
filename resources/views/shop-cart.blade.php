@@ -49,7 +49,7 @@
                                     <span class="subtotal-amount">USD ${{ $item['price'] * $item['quantity'] }}</span>
                                 </td>
                                 <td class="pro-remove">
-                                    <a class="remove" href="{{ route('product-remove', ['id' => $item['id'], 'bag' => 'cart']) }}"><i class="fa fa-trash-o"></i></a>
+                                    <a class="remove" href="{{ route('product-remove', ['id' => $id, 'bag' => 'cart']) }}"><i class="fa fa-trash-o"></i></a>
                                 </td>
                             </tr>
                         @endforeach

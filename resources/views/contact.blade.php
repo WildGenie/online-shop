@@ -97,7 +97,7 @@
                   <div class="swiper-slide">
                     <!--== Start Brand Logo Item ==-->
                     <div class="brand-logo-item">
-                      <a href="#/"><img src="{{asset('img/brand-logo/1.jpg')}}" alt="Image-HasTech"></a>
+                      <a href="#/"><img src="{{asset('img/brand-logo/6.jpg')}}" alt="Image-HasTech"></a>
                     </div>
                     <!--== End Brand Logo Item ==-->
                   </div>

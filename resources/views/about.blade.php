@@ -66,7 +66,7 @@
             <!--== Start Single Banner Item ==-->
             <div class="single-banner-image">
               <a href="shop.blade.php">
-                <img class="w-100" src="{{asset('img/shop/banner/1.jpg')}}" alt="Image-HasTech">
+                <img class="w-100" src="{{asset('img/shop/banner/6.jpg')}}" alt="Image-HasTech">
               </a>
             </div>
             <!--== End Single Banner Item ==-->
@@ -182,7 +182,7 @@
                     <div class="testi-inner-content">
                       <div class="testi-author">
                         <div class="testi-thumb">
-                          <img src="{{asset('img/testimonial/1.jpg')}}" alt="Image-HasTech">
+                          <img src="{{asset('img/testimonial/6.jpg')}}" alt="Image-HasTech">
                         </div>
                       </div>
                     </div>
@@ -238,7 +238,7 @@
                   <div class="swiper-slide">
                     <!--== Start Brand Logo Item ==-->
                     <div class="brand-logo-item">
-                      <a href="#/"><img src="{{asset('img/brand-logo/1.jpg')}}" alt="Image-HasTech"></a>
+                      <a href="#/"><img src="{{asset('img/brand-logo/6.jpg')}}" alt="Image-HasTech"></a>
                     </div>
                     <!--== End Brand Logo Item ==-->
                   </div>

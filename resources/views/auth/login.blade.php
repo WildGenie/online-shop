@@ -7,13 +7,13 @@
         <form id="contact-form" action="{{ route('login') }}" method="post">
             @csrf
             <div class="form-group col-md-6">
-                <input class="form-control" type="email" name="email" placeholder="Email" value="{{ old('email') }}" required>
+                <input class="form-control @error('email') is-invalid @enderror" type="email" name="email" placeholder="Email" value="{{ old('email') }}" required>
                 @error('email')
                 <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
             </div>
             <div class="form-group col-md-6">
-                <input type="password" class="form-control" name="password" placeholder="Password" required>
+                <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Password" required>
                 @error('password')
                 <div class="invalid-feedback">{{ $message }}</div>
                 @enderror
@@ -22,6 +22,7 @@
                 <button class="btn btn-theme" type="submit">Submit</button>
             </div>
         </form>
+
     </div>
     <!--== End Contact Form ==-->
 </x-layout>

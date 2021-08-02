@@ -10,7 +10,7 @@ class PostController extends Controller
     public function show(PostFilter $request)
     {
 
-        $posts = Post::filter($request)->paginate(10);
+        $posts = Post::filter($request)->paginate(8);
 
         return view('blog', [
             'title' => 'News',

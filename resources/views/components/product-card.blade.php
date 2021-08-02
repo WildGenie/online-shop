@@ -11,7 +11,7 @@
             <x-product-stars :product="$product"/>
         </div>
         <p>{{ $product->description }}</p>
-        <form action="{{ route('check-btn', $product->id) }}" method="get">
+        <form action="{{ route('check-btn', ['id' => $product->id]) }}" method="get">
             <div class="product-select-action">
                 <div class="select-item">
                     <div class="select-size-wrap">

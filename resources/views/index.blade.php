@@ -5,7 +5,22 @@
       <div class="swiper-container swiper-slide-gap home-slider-container default-slider-container">
         <div class="swiper-wrapper home-slider-wrapper slider-default">
           <div class="swiper-slide">
-            <div class="slider-content-area" data-bg-img="https://picsum.photos/id/42/1920/800">
+            <div class="slider-content-area" data-bg-img="{{ asset('img/slider/bright.jpg') }}">
+              <div class="container">
+                <div class="row align-items-center ">
+                  <div class="col-12">
+                    <div class="slider-content">
+                      <h5 class="sub-title">NEW COLLECTION 2021</h5>
+                        <h2 class="title">The Brighten Up <br>Interior Collection</h2>
+                        <a class="btn-slider" href="{{ route('products') }}">Shop Now</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="slider-content-area" data-bg-img="{{ asset('img/slider/chairs.jpg') }}">
               <div class="container">
                 <div class="row align-items-center ">
                   <div class="col-12">
@@ -19,23 +34,7 @@
               </div>
             </div>
           </div>
-          <div class="swiper-slide">
-            <div class="slider-content-area" data-bg-img="https://picsum.photos/id/528/1920/800">
-              <div class="container">
-                <div class="row align-items-center ">
-                  <div class="col-12">
-                    <div class="slider-content">
-                      <h5 class="sub-title">NEW COLLECTION 2021</h5>
-                      <h2 class="title">The Brighten Up <br>Interior Collection</h2>
-                      <a class="btn-slider" href="{{ route('products') }}">Shop Now</a>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-
         <!--== Add Swiper Arrows ==-->
         <div class="swiper-button-next"><i class="fa fa-angle-right"></i></div>
         <div class="swiper-button-prev"><i class="fa fa-angle-left"></i></div>

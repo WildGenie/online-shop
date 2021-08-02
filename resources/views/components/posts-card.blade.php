@@ -10,7 +10,7 @@
         </div>
         <div class="content">
             <h4 class="title"><a href="{{ route('blog') }}/{{ $post->slug }}">{{ $post->title }}</a></h4>
-            <p>{{ substr($post->body, 0, 50) }} ...</p>
+            <p>{{ substr($post->body, 0, 100) }} ...</p>
             <a class="btn-link" href="{{ route('blog') }}/{{ $post->slug }}">Read More</a>
             <ul class="meta-info">
                 <li><span>By - </span><a class="author" href="blog.blade.php">Pasha</a></li>

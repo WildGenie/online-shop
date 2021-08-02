@@ -74,7 +74,6 @@
                                         <ul>
                                             <form method="POST" action="/logout">
                                                 @csrf
-
                                                 <button class="btn btn-danger" type="submit">Log Out</button>
                                             </form>
                                         </ul>
@@ -100,7 +99,7 @@
                                 <i class="close-icon bardy bardy-cancel"></i>
                             </button>
                             <div class="header-search-form">
-                                <form action="{{ route('products') }}?search{{ request('search') }}" method="GET">
+                                <form action="?search{{ request('search') }}" method="GET">
                                     <input type="search" name="search" placeholder="Search our store">
                                     <button type="submit"><i class="bardy bardy-search"></i></button>
                                 </form>
@@ -137,7 +136,7 @@
                                             <div class="cart-item">
                                                 <div class="thumb">
                                                     <a href="{{ route('products') }}/{{ $item['slug'] }}"><img class="w-100" src="storage/{{ $item['image'] }}" alt="Image-HasTech"></a>
-                                                    <a class="remove" href="{{ route('product-remove', ['id' => $item['id'], 'bag' => 'cart']) }}"><i class="fa fa-trash-o"></i></a>
+                                                    <a class="remove" href="{{ route('product-remove', ['id' => $id, 'bag' => 'cart']) }}"><i class="fa fa-trash-o"></i></a>
                                                 </div>
                                                 <div class="content">
                                                     <h5 class="title"><a href="{{ route('products') }}/{{ $item['slug'] }}">{{ $item['title'] }}</a></h5>

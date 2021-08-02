@@ -58,15 +58,15 @@ Route::get('/products/{product:slug}', [ProductController::class, 'showSingle'])
 
 
 //=====================  shopping cart / wishlist
-Route::get('/shopping-cart', [ProductController::class, 'showCart'])->name('cart');
-Route::get('/add-product/{id}/{bag}', [ProductController::class, 'addToBag'])->name('product-add');
-Route::get('/delete-product/{id}/{bag}', [ProductController::class, 'deleteFromBag'])->name('product-remove');
-Route::get('/clear-cart/{bag}', [ProductController::class, 'clearBag'])->name('bag-clear');
+Route::get('/shopping-cart', [CartController::class, 'showCart'])->name('cart');
+Route::get('/add-product/{id}/{bag}', [CartController::class, 'addToBag'])->name('product-add');
+Route::get('/delete-product/{id}/{bag}', [CartController::class, 'deleteFromBag'])->name('product-remove');
+Route::get('/clear-cart/{bag}', [CartController::class, 'clearBag'])->name('bag-clear');
 Route::get('/wishlist', function () {
     return view('wishlist', ['title' => 'Your wishlist']);
 })->name('wishlist');
 
-Route::get('/add/{product:id}', [ProductController::class, 'checkButton'])->name('check-btn');
+Route::get('/add/{id}', [CartController::class, 'checkButton'])->name('check-btn');
 
 
 Route::get('/shopping-checkout', [OrderController::class, 'showCheckout'])->name('checkout');

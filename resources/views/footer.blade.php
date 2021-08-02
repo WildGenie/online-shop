@@ -11,7 +11,7 @@
                                 <img class="logo-main" src="{{ asset('img/logo.svg') }}" alt="Logo" />
                             </a>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab deserunt expedita natus placeat. Deleniti eaque explicabo ipsum nam repudiandae similique!</p>
+                        <p>Discover our fantastic range of design furniture and homeware combining quality and affordability.</p>
                     </div>
                     <!--== End widget Item ==-->
                 </div>

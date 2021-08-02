@@ -2795,6 +2795,9 @@ section .container-fluid {
   margin-bottom: 21px;
   justify-content: space-between;
 }
+.btn-dark {
+    background-color: #0B1521;
+}
 @media only screen and (max-width: 575px) {
   .product-header-wrap {
     display: block;

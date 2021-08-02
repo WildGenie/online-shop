@@ -9,6 +9,10 @@ class OrderController extends Controller
 {
     public function showCheckout()
     {
+        if (!auth()->check()) {
+            return redirect()->route('login');
+        }
+
         return view('shop-checkout', [
             'title' => 'Products Information'
         ]);
@@ -51,9 +55,7 @@ class OrderController extends Controller
                 'size' => $item['size'],
                 'slug' => $item['slug'],
                 'title' => $item['title'],
-                'description' => $item['description'],
                 'image' => $item['image'],
-                'stars' => $item['stars'],
             ]);
 
             unset($product[$id]);

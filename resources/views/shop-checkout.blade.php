@@ -1,4 +1,4 @@
-<head>
+     <head>
     <title>{{ $title }}</title>
 </head>
 
@@ -106,7 +106,7 @@
                                 <div class="thumb">
                                     <img src="storage/{{ $item['image'] }}" alt="">
                                     <span class="quantity">{{ $item['quantity'] }}</span>
-                                    <a class="remove" href="{{ route('product-remove', ['id' => $item['id'], 'bag' => 'cart']) }}"><i class="fa fa-trash-o"></i></a>
+                                    <a class="remove" href="{{ route('product-remove', ['id' => $id, 'bag' => 'cart']) }}"><i class="fa fa-trash-o"></i></a>
                                 </div>
                                 <div class="content">
                                     <h4 class="title">{{ $item['title'] }}</h4>

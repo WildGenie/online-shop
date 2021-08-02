@@ -47,21 +47,21 @@
         <h4 class="sidebar-title">Archive</h4>
         <div class="sidebar-body">
             <div class="category-sub-menu pt-1">
-                <span class="title">February 2019</span>
+                <span class="title">November 2020</span>
                 <ul>
-                    <li><a href="#/">Standard dummy text ever since</a></li>
-                    <li><a href="#/">Make a type specimen book</a></li>
-                    <li><a href="#/">Lorem Ipsum is simply dummy</a></li>
-                    <li><a href="#/">It is a long established</a></li>
-                    <li><a href="#/">Sed quia non numquam</a></li>
-                    <li><a href="#/">Ratione voluptatem sequi nesciunt</a></li>
-                    <li><a href="#/">Sit aspernatur aut odit</a></li>
+                    <li><a href="#/">What’s in Style for Living Room Furniture</a></li>
+                    <li><a href="#/">5 Home Office Ideas that Will Make You Rethink Your Workspace</a></li>
+                    <li><a href="#/">Six Things to Consider When Choosing Bedroom Furniture</a></li>
+                    <li><a href="#/">7 Factors to Consider When Buying Dining Room Tables</a></li>
+                    <li><a href="#/">Reinvent Your Dining Room to Perfection</a></li>
+                    <li><a href="#/">7 Tips to Make Your Dining Room Look Amazing</a></li>
+                    <li><a href="#/">7 Tips for Buying a Quality Sofa</a></li>
                 </ul>
-                <span class="title">January 2019</span>
+                <span class="title">July 2020</span>
                 <ul>
-                    <li><a href="#/">Guis nostrum Nemo enim ipsam</a></li>
-                    <li><a href="#/">Neque porro quisquam est</a></li>
-                    <li><a href="#/">Qui dolorem ipsum quia</a></li>
+                    <li><a href="#/">How to Create the Perfect Master Bedroom</a></li>
+                    <li><a href="#/">How To Style a Modern Living Room</a></li>
+                    <li><a href="#/">6 Simple Bedroom Decor Ideas</a></li>
                 </ul>
             </div>
         </div>
